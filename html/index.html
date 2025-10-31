@@ -1,0 +1,1829 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>سپند راه آگرین – حمل و نقل بین‌المللی</title>
+    <!-- Tailwind CDN (dev only) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            container: {
+              center: true,
+              padding: { DEFAULT: "1rem", lg: "2rem" },
+            },
+            boxShadow: { soft: "0 10px 30px rgba(0,0,0,.12)" },
+          },
+        },
+      };
+    </script>
+    <style>
+      @import url("assets/fonts/fontiran.css");
+      body {
+        font-family: ModamWeb !important;
+        direction: rtl;
+        background-color: #cdcdcd;
+        margin: 0;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: ModamWeb !important;
+      }
+    </style>
+    <!-- Swiper -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+    />
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      html,
+      body {
+        font-family: "Vazirmatn", system-ui, -apple-system, Segoe UI, Roboto,
+          "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+          "Segoe UI Emoji";
+      }
+      .hero-slide {
+        position: relative;
+      }
+      .hero-slide::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.7),
+          rgba(0, 0, 0, 0.35) 45%,
+          rgba(0, 0, 0, 0.25) 60%,
+          rgba(0, 0, 0, 0.15) 80%,
+          transparent
+        );
+      }
+      .bottom-fade {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 180px;
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+      }
+      /* Header blur when scrolled */
+      .topnav {
+        transition: background 0.25s, backdrop-filter 0.25s, box-shadow 0.25s;
+      }
+      .topnav.scrolled {
+        background: rgb(18 18 18 / 46%);
+        backdrop-filter: blur(6px);
+        box-shadow: 0 6px 20px rgba(2, 6, 23, 0.35);
+      }
+      /* mobile nav */
+      .mobile-nav-panel {
+        width: 80%;
+        max-width: 320px;
+        direction: rtl;
+      }
+      /* focus outlines for accessibility */
+      :focus-visible {
+        outline: 3px solid rgba(59, 130, 246, 0.35);
+        outline-offset: 2px;
+        border-radius: 6px;
+      }
+
+      /* Desktop dropdown */
+      .nav-item {
+        position: relative;
+      }
+      .nav-dropdown {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 8px);
+        min-width: 220px;
+        background: #fff;
+        color: #0f172a;
+        border-radius: 12px;
+        box-shadow: 0 14px 40px rgba(2, 6, 23, 0.12);
+        transform-origin: top right;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px) scale(0.98);
+        transition: 180ms ease;
+        z-index: 60;
+      }
+      .nav-dropdown a {
+        display: block;
+        padding: 0.65rem 0.9rem;
+        font-size: 0.95rem;
+        color: inherit;
+      }
+      /* remove hover-open behavior: dropdown will open only when .open class set via JS */
+      .nav-dropdown {
+        position: absolute;
+        right: 0;
+        top: calc(100% + 8px);
+        min-width: 220px;
+        background: #fff;
+        color: #0f172a;
+        border-radius: 12px;
+        box-shadow: 0 14px 40px rgba(2, 6, 23, 0.12);
+        transform-origin: top right;
+        opacity: 0;
+        pointer-events: none;
+        transform: translateY(-6px) scale(0.98);
+        transition: 180ms ease;
+        z-index: 60;
+      }
+      .nav-dropdown.open {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        pointer-events: auto;
+      }
+      .autoplay-progress {
+        position: absolute;
+
+        z-index: 10;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(255, 255, 255, 0.417);
+      }
+
+      .autoplay-progress svg {
+        --progress: 0;
+        position: absolute;
+        left: 0;
+        top: 0px;
+        z-index: 10;
+        width: 100%;
+        height: 100%;
+        stroke-width: 2px;
+        stroke: rgba(255, 255, 255, 0.417);
+        fill: none;
+        stroke-dashoffset: calc(125.6px * (1 - var(--progress)));
+        stroke-dasharray: 125.6;
+        transform: rotate(-90deg);
+      }
+      @keyframes pulseRing {
+        0% {
+          transform: scale(1);
+          opacity: 0.4;
+        }
+        70% {
+          transform: scale(1.8);
+          opacity: 0;
+        }
+        100% {
+          transform: scale(2);
+          opacity: 0;
+        }
+      }
+
+      .pulse-ring {
+        background: rgba(255, 255, 255, 0.25);
+        transform-origin: center;
+        will-change: transform, opacity;
+        animation: pulseRing 3.4s cubic-bezier(0.22, 0.36, 0.36, 1) infinite;
+        backface-visibility: hidden;
+      }
+      .swiper-pagination {
+        position: unset !important;
+      }
+      .swiper-pagination-bullet {
+        border-radius: 10px;
+      }
+      .swiper-pagination-bullet-active {
+        transition: all 0.3s ease-out;
+        background: #374151;
+        width: 2rem;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-slate-800">
+    <!-- ================= Header ================= -->
+    <header class="topnav fixed top-0 inset-x-0 z-50">
+      <div class="container">
+        <div class="flex h-20 items-center justify-between">
+          <!-- Right: logo/name -->
+          <div class="flex items-center gap-3">
+            <div class="w-14 h-14 grid place-items-center text-white">
+              <!-- <span class="text-sm font-extrabold tracking-widest">SRA</span> -->
+              <img src="assets/logo_sepand_rah_white.svg" alt="" />
+            </div>
+            <div class="hidden sm:flex flex-col text-xs text-white/80 gap-1">
+              <span class="text-sm">سپند راه آگرین</span>
+              <span>SEPAND RAH AGRIN</span>
+            </div>
+          </div>
+          <!-- Center: nav -->
+          <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+            <a href="#" class="hover:text-white transition">خانه</a>
+            <div class="nav-item" tabindex="0">
+              <button
+                class="flex items-center gap-2 hover:text-white transition text-white/80"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                خدمات
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M6 9l6 6 6-6" />
+                </svg>
+              </button>
+              <div class="nav-dropdown" role="menu" aria-label="زیرمنو خدمات">
+                <a href="#services" role="menuitem">حمل دریایی (FCL/LCL)</a>
+                <a href="#services" role="menuitem">حمل هوایی</a>
+                <a href="#services" role="menuitem">حمل زمینی</a>
+                <a href="#services" role="menuitem">انبارداری و توزیع</a>
+                <a href="#services" role="menuitem">ترخیص کالا</a>
+              </div>
+            </div>
+            <a href="#projects" class="hover:text-white transition">پروژه‌ها</a>
+            <a href="#knowledge" class="hover:text-white transition"
+              >دانشنامه</a
+            >
+            <a href="#about" class="hover:text-white transition">درباره ما</a>
+            <a href="#contact" class="hover:text-white transition"
+              >تماس با ما</a
+            >
+          </nav>
+          <!-- Left: CTAs -->
+          <div class="flex items-center gap-2">
+            <button class="px-3 py-2 text-xs text-white hover:bg-white/20">
+              EN
+            </button>
+            <a
+              href="#consult"
+              class="hidden sm:inline-flex px-4 py-2 rounded-full bg-blue-600/90 hover:bg-blue-600 text-xs font-semibold text-white shadow-lg shadow-blue-500/20"
+              >مشاوره رایگان</a
+            >
+            <!-- Mobile menu button -->
+            <button
+              aria-label="باز کردن منو"
+              aria-expanded="false"
+              class="md:hidden ml-2 p-2 rounded-lg bg-white/10 text-white mobile-menu-btn"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M3 6h18M3 12h18M3 18h18" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Mobile nav drawer -->
+    <div id="mobileNav" class="fixed inset-0 z-50 hidden">
+      <div
+        class="absolute inset-0 overlay bg-black/60"
+        aria-hidden="true"
+        style="opacity: 0"
+      ></div>
+      <aside
+        id="mobileNavPanel"
+        class="mobile-nav-panel absolute top-0 right-0 h-full bg-white text-slate-900 p-6 shadow-lg"
+        role="dialog"
+        aria-modal="true"
+        aria-hidden="true"
+      >
+        <div class="flex items-center justify-between mb-6">
+          <div class="flex items-center gap-3">
+            <div
+              class="w-10 h-10 rounded-full bg-slate-900 text-white grid place-items-center"
+            >
+              SRA
+            </div>
+            <div class="text-blue-700 font-semibold">سپند راه آگرین</div>
+          </div>
+          <button
+            aria-label="بستن منو"
+            class="close-mobile p-2 rounded-md text-slate-700"
+          >
+            <svg
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M6 6l12 12M6 18L18 6" />
+            </svg>
+          </button>
+        </div>
+        <nav class="flex flex-col gap-2 text-sm">
+          <a href="#" class="py-2">خانه</a>
+          <div>
+            <button
+              class="mobile-parent-btn w-full text-right py-2 flex items-center justify-between"
+              aria-expanded="false"
+            >
+              خدمات
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                class="text-blue"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M6 9l6 6 6-6" />
+              </svg>
+            </button>
+            <div class="mobile-submenu pl-3 text-slate-700">
+              <a href="#services" class="block py-2">حمل دریایی (FCL/LCL)</a>
+              <a href="#services" class="block py-2">حمل هوایی</a>
+              <a href="#services" class="block py-2">حمل زمینی</a>
+              <a href="#services" class="block py-2">انبارداری و توزیع</a>
+              <a href="#services" class="block py-2">ترخیص کالا</a>
+            </div>
+          </div>
+          <a href="#projects" class="py-2">پروژه‌ها</a>
+          <a href="#knowledge" class="py-2">دانشنامه</a>
+          <a href="#about" class="py-2">درباره ما</a>
+          <a href="#contact" class="py-2">تماس با ما</a>
+        </nav>
+      </aside>
+    </div>
+
+    <!-- ================= Hero / Swiper ================= -->
+    <section class="relative h-screen">
+      <div class="swiper slider h-full">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="hero-slide absolute inset-0">
+              <img
+                src="assets/slider_4.jpg"
+                class="w-full h-full object-cover"
+                alt="هوایی و زمینی"
+              />
+            </div>
+            <div
+              class="relative z-10 h-full container max-w-7xl flex items-center"
+            >
+              <div class="slide-content">
+                <p class="text-white/85 text-sm mb-3">سپند راه آگرین</p>
+                <h1
+                  class="text-3xl sm:text-5xl font-extrabold text-white leading-[1.2]"
+                >
+                  مسیر امن صادرات و واردات
+                </h1>
+                <p class="mt-4 max-w-xl text-white/85">
+                  از تأمین تا حمل و ترخیص، با شبکه‌ای قابل اعتماد.
+                </p>
+                <div class="mt-10 flex gap-3">
+                  <a
+                    href="#consult"
+                    class="px-5 py-3 rounded-full bg-blue-600/90 hover:bg-blue-600 text-white text-sm font-semibold shadow-lg shadow-blue-500/20"
+                    >مشاوره رایگان</a
+                  >
+                  <a
+                    href="#services"
+                    class="group flex items-center justify-center gap-2 px-5 py-3 text-white/90 hover:text-blue-600 transition-colors duration-300"
+                  >
+                    <span>خدمات</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="1.5"
+                      stroke="currentColor"
+                      class="size-5 transition-transform duration-300 group-hover:-translate-x-1"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-transparent via-black/20 to-black/50"
+            ></div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="hero-slide absolute inset-0">
+              <img
+                src="assets/slider_6.jpg"
+                class="w-full h-full object-cover"
+                alt="هوایی و زمینی"
+              />
+            </div>
+            <div
+              class="relative z-10 h-full container max-w-7xl flex items-center"
+            >
+              <div class="slide-content">
+                <p class="text-white/80 text-sm mb-3">شبکه بین‌المللی</p>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
+                  حمل دریایی، هوایی و زمینی
+                </h2>
+                <p class="mt-4 max-w-xl text-white/85">
+                  پوشش FCL/LCL، اکسپرس هوایی و FTL/LTL با ردیابی آنلاین.
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-transparent via-black/20 to-black/50"
+            ></div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="hero-slide absolute inset-0">
+              <img
+                src="assets/slider_7.jpg"
+                class="w-full h-full object-cover"
+                alt="مشاوره"
+              />
+            </div>
+            <div
+              class="relative z-10 h-full container max-w-7xl flex items-center"
+            >
+              <div class="slide-content">
+                <p class="text-white/80 text-sm mb-3">مشاوره بازرگانی</p>
+                <h2 class="text-3xl sm:text-5xl font-extrabold text-white">
+                  از استعلام تا ترخیص
+                </h2>
+                <p class="mt-4 max-w-xl text-white/85">
+                  در تمام مراحل در کنار شما هستیم تا با خیال راحت تجارت کنید.
+                </p>
+              </div>
+            </div>
+            <div
+              class="absolute inset-0 bg-gradient-to-t from-transparent via-black/20 to-black/50"
+            ></div>
+          </div>
+        </div>
+        <!-- <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="autoplay-progress">
+          <svg viewBox="0 0 48 48">
+            <circle cx="24" cy="24" r="20"></circle>
+          </svg>
+          <span></span>
+        </div> -->
+        <!-- Bottom control bar -->
+        <div class="absolute bottom-0 inset-x-0 z-30">
+          <div class="container">
+            <div class="flex items-center justify-between py-5">
+              <!-- 3) Autoplay progress -->
+              <div
+                class="autoplay-progress relative w-11 h-11 grid place-items-center text-white/90"
+              >
+                <svg class="absolute inset-0" viewBox="0 0 48 48">
+                  <!-- حلقه پس‌زمینه -->
+                  <circle class="track" cx="24" cy="24" r="20" />
+                  <!-- حلقه پیشرفت -->
+                  <circle class="indicator" cx="24" cy="24" r="20" />
+                </svg>
+                <span class="text-[11px] font-semibold"></span>
+              </div>
+
+              <!-- 2) Center Scroll Button -->
+              <div class="text-white/80">
+                <!-- دکمه پالس‌دار -->
+                <button
+                  id="scrollDownBtn"
+                  class="relative w-10 h-10 rounded-full flex items-center justify-center overflow-visible"
+                  aria-label="Scroll to next section"
+                >
+                  <!-- فلش رو به پایین -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="w-4 h-4 text-white relative z-10"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M19.5 8.25 12 15.75 4.5 8.25"
+                    />
+                  </svg>
+
+                  <!-- حلقه پالس -->
+                  <span
+                    class="pulse-ring absolute inset-0 rounded-full pointer-events-none"
+                  ></span>
+                </button>
+              </div>
+
+              <!-- 1) Arrows -->
+
+              <div class="flex items-center gap-2">
+                <button
+                  class="hero-prev w-11 h-11 grid place-items-center rounded-full bg-white/15 hover:bg-white/25 text-white transition"
+                >
+                  <!-- چپ -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </button>
+                <button
+                  class="hero-next w-11 h-11 grid place-items-center rounded-full bg-white/15 hover:bg-white/25 text-white transition"
+                >
+                  <!-- راست -->
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    class="w-5 h-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+                    />
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- white overlay under hero for smooth transition to services  -->
+      <div
+        class="absolute -bottom-24 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-white pointer-events-none"
+      ></div>
+    </section>
+
+    <!-- ================= Services ================= -->
+    <section id="services" class="relative py-16 mt-10" dir="rtl">
+      <div class="text-gray-700 text-center max-w-3xl mx-auto mb-10">
+        <h2 class="text-2xl sm:text-3xl font-extrabold">
+          خدمات لجستیکی یکپارچه
+        </h2>
+        <p class="text-gray-500 mt-5 text-sm sm:text-base leading-relaxed">
+          سپند راه آگرین با تکیه بر تجربه‌ی بین‌المللی، شبکه‌ای گسترده از
+          مسیرهای حمل دریایی، هوایی و زمینی را پوشش می‌دهد. از برنامه‌ریزی حمل
+          تا ترخیص و مشاوره‌ی بازرگانی، خدمات ما به‌گونه‌ای طراحی شده‌اند تا
+          زنجیره‌ی تأمین شما را سریع‌تر، دقیق‌تر و مقرون‌به‌صرفه‌تر سازند.
+        </p>
+      </div>
+
+      <!-- Swiper -->
+      <div class="container swiper services-swiper px-4 md:px-10">
+        <div class="swiper-wrapper">
+          <!-- Slide  -->
+          <div class="swiper-slide group">
+            <article class="relative h-[400px] rounded-2xl overflow-hidden">
+              <!-- BG image: only this zooms on hover -->
+              <img
+                src="assets/service_default.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
+                alt="Sea Freight"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+
+              <!-- Title (linked) -->
+              <div class="absolute bottom-6 right-6 z-10 text-white">
+                <span
+                  class="px-3 py-1 text-[11px] rounded-full bg-white/20 backdrop-blur-sm"
+                  >حمل دریایی</span
+                >
+                <h3 class="mt-2 text-xl font-bold drop-shadow">
+                  <a
+                    href="/services/sea-freight"
+                    class="hover:underline underline-offset-4"
+                    >پوشش جهانی</a
+                  >
+                </h3>
+              </div>
+
+              <!-- Glass overlay with description + CTA -->
+              <div
+                class="absolute inset-0 z-10 p-6 flex flex-col justify-end bg-white/10 backdrop-blur-md opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 focus-within:opacity-100 focus-within:translate-y-0"
+              >
+                <p class="text-white/90 text-sm text-center">
+                  خدمات ارزش‌افزا برای زنجیره تأمین شما.
+                </p>
+                <a
+                  href="#"
+                  class="mt-4 inline-flex justify-center items-center gap-2 text-sm text-white/90 hover:text-white rounded-full px-4 py-2 bg-white/15 hover:bg-blue-600 text-center transition-all duration-500 ease-in-out"
+                >
+                  حمل دریایی
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- Slide  -->
+          <div class="swiper-slide group">
+            <article class="relative h-[400px] rounded-2xl overflow-hidden">
+              <!-- BG image: only this zooms on hover -->
+              <img
+                src="assets/service_default.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
+                alt="Sea Freight"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+
+              <!-- Title (linked) -->
+              <div class="absolute bottom-6 right-6 z-10 text-white">
+                <span
+                  class="px-3 py-1 text-[11px] rounded-full bg-white/20 backdrop-blur-sm"
+                  >حمل دریایی</span
+                >
+                <h3 class="mt-2 text-xl font-bold drop-shadow">
+                  <a
+                    href="/services/sea-freight"
+                    class="hover:underline underline-offset-4"
+                    >پوشش جهانی</a
+                  >
+                </h3>
+              </div>
+
+              <!-- Glass overlay with description + CTA -->
+              <div
+                class="absolute inset-0 z-10 p-6 flex flex-col justify-end bg-white/10 backdrop-blur-md opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 focus-within:opacity-100 focus-within:translate-y-0"
+              >
+                <p class="text-white/90 text-sm text-center">
+                  خدمات ارزش‌افزا برای زنجیره تأمین شما.
+                </p>
+                <a
+                  href="#"
+                  class="mt-4 inline-flex justify-center items-center gap-2 text-sm text-white/90 hover:text-white rounded-full px-4 py-2 bg-white/15 hover:bg-blue-600 text-center transition-all duration-500 ease-in-out"
+                >
+                  حمل دریایی
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- Slide  -->
+          <div class="swiper-slide group">
+            <article class="relative h-[400px] rounded-2xl overflow-hidden">
+              <!-- BG image: only this zooms on hover -->
+              <img
+                src="assets/service_default.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
+                alt="Sea Freight"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+
+              <!-- Title (linked) -->
+              <div class="absolute bottom-6 right-6 z-10 text-white">
+                <span
+                  class="px-3 py-1 text-[11px] rounded-full bg-white/20 backdrop-blur-sm"
+                  >حمل دریایی</span
+                >
+                <h3 class="mt-2 text-xl font-bold drop-shadow">
+                  <a
+                    href="/services/sea-freight"
+                    class="hover:underline underline-offset-4"
+                    >پوشش جهانی</a
+                  >
+                </h3>
+              </div>
+
+              <!-- Glass overlay with description + CTA -->
+              <div
+                class="absolute inset-0 z-10 p-6 flex flex-col justify-end bg-white/10 backdrop-blur-md opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 focus-within:opacity-100 focus-within:translate-y-0"
+              >
+                <p class="text-white/90 text-sm text-center">
+                  خدمات ارزش‌افزا برای زنجیره تأمین شما.
+                </p>
+                <a
+                  href="#"
+                  class="mt-4 inline-flex justify-center items-center gap-2 text-sm text-white/90 hover:text-white rounded-full px-4 py-2 bg-white/15 hover:bg-blue-600 text-center transition-all duration-500 ease-in-out"
+                >
+                  حمل دریایی
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- Slide  -->
+          <div class="swiper-slide group">
+            <article class="relative h-[400px] rounded-2xl overflow-hidden">
+              <!-- BG image: only this zooms on hover -->
+              <img
+                src="assets/service_default.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
+                alt="Sea Freight"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+
+              <!-- Title (linked) -->
+              <div class="absolute bottom-6 right-6 z-10 text-white">
+                <span
+                  class="px-3 py-1 text-[11px] rounded-full bg-white/20 backdrop-blur-sm"
+                  >حمل دریایی</span
+                >
+                <h3 class="mt-2 text-xl font-bold drop-shadow">
+                  <a
+                    href="/services/sea-freight"
+                    class="hover:underline underline-offset-4"
+                    >پوشش جهانی</a
+                  >
+                </h3>
+              </div>
+
+              <!-- Glass overlay with description + CTA -->
+              <div
+                class="absolute inset-0 z-10 p-6 flex flex-col justify-end bg-white/10 backdrop-blur-md opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 focus-within:opacity-100 focus-within:translate-y-0"
+              >
+                <p class="text-white/90 text-sm text-center">
+                  خدمات ارزش‌افزا برای زنجیره تأمین شما.
+                </p>
+                <a
+                  href="#"
+                  class="mt-4 inline-flex justify-center items-center gap-2 text-sm text-white/90 hover:text-white rounded-full px-4 py-2 bg-white/15 hover:bg-blue-600 text-center transition-all duration-500 ease-in-out"
+                >
+                  حمل دریایی
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- Slide  -->
+          <div class="swiper-slide group">
+            <article class="relative h-[400px] rounded-2xl overflow-hidden">
+              <!-- BG image: only this zooms on hover -->
+              <img
+                src="assets/service_default.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
+                alt="Sea Freight"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+
+              <!-- Title (linked) -->
+              <div class="absolute bottom-6 right-6 z-10 text-white">
+                <span
+                  class="px-3 py-1 text-[11px] rounded-full bg-white/20 backdrop-blur-sm"
+                  >حمل دریایی</span
+                >
+                <h3 class="mt-2 text-xl font-bold drop-shadow">
+                  <a
+                    href="/services/sea-freight"
+                    class="hover:underline underline-offset-4"
+                    >پوشش جهانی</a
+                  >
+                </h3>
+              </div>
+
+              <!-- Glass overlay with description + CTA -->
+              <div
+                class="absolute inset-0 z-10 p-6 flex flex-col justify-end bg-white/10 backdrop-blur-md opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 focus-within:opacity-100 focus-within:translate-y-0"
+              >
+                <p class="text-white/90 text-sm text-center">
+                  خدمات ارزش‌افزا برای زنجیره تأمین شما.
+                </p>
+                <a
+                  href="#"
+                  class="mt-4 inline-flex justify-center items-center gap-2 text-sm text-white/90 hover:text-white rounded-full px-4 py-2 bg-white/15 hover:bg-blue-600 text-center transition-all duration-500 ease-in-out"
+                >
+                  حمل دریایی
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- Slide  -->
+          <div class="swiper-slide group">
+            <article class="relative h-[400px] rounded-2xl overflow-hidden">
+              <!-- BG image: only this zooms on hover -->
+              <img
+                src="assets/service_default.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
+                alt="Sea Freight"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+
+              <!-- Title (linked) -->
+              <div class="absolute bottom-6 right-6 z-10 text-white">
+                <span
+                  class="px-3 py-1 text-[11px] rounded-full bg-white/20 backdrop-blur-sm"
+                  >حمل دریایی</span
+                >
+                <h3 class="mt-2 text-xl font-bold drop-shadow">
+                  <a
+                    href="/services/sea-freight"
+                    class="hover:underline underline-offset-4"
+                    >پوشش جهانی</a
+                  >
+                </h3>
+              </div>
+
+              <!-- Glass overlay with description + CTA -->
+              <div
+                class="absolute inset-0 z-10 p-6 flex flex-col justify-end bg-white/10 backdrop-blur-md opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 focus-within:opacity-100 focus-within:translate-y-0"
+              >
+                <p class="text-white/90 text-sm text-center">
+                  خدمات ارزش‌افزا برای زنجیره تأمین شما.
+                </p>
+                <a
+                  href="#"
+                  class="mt-4 inline-flex justify-center items-center gap-2 text-sm text-white/90 hover:text-white rounded-full px-4 py-2 bg-white/15 hover:bg-blue-600 text-center transition-all duration-500 ease-in-out"
+                >
+                  حمل دریایی
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+          <!-- Slide  -->
+          <div class="swiper-slide group">
+            <article class="relative h-[400px] rounded-2xl overflow-hidden">
+              <!-- BG image: only this zooms on hover -->
+              <img
+                src="assets/service_default.jpg"
+                class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 ease-out will-change-transform group-hover:scale-105"
+                alt="Sea Freight"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/10 to-transparent"></div>
+
+              <!-- Title (linked) -->
+              <div class="absolute bottom-6 right-6 z-10 text-white">
+                <span
+                  class="px-3 py-1 text-[11px] rounded-full bg-white/20 backdrop-blur-sm"
+                  >حمل دریایی</span
+                >
+                <h3 class="mt-2 text-xl font-bold drop-shadow">
+                  <a
+                    href="/services/sea-freight"
+                    class="hover:underline underline-offset-4"
+                    >پوشش جهانی</a
+                  >
+                </h3>
+              </div>
+
+              <!-- Glass overlay with description + CTA -->
+              <div
+                class="absolute inset-0 z-10 p-6 flex flex-col justify-end bg-white/10 backdrop-blur-md opacity-0 translate-y-3 transition-all duration-500 group-hover:opacity-100 group-hover:translate-y-0 focus-within:opacity-100 focus-within:translate-y-0"
+              >
+                <p class="text-white/90 text-sm text-center">
+                  خدمات ارزش‌افزا برای زنجیره تأمین شما.
+                </p>
+                <a
+                  href="#"
+                  class="mt-4 inline-flex justify-center items-center gap-2 text-sm text-white/90 hover:text-white rounded-full px-4 py-2 bg-white/15 hover:bg-blue-600 text-center transition-all duration-500 ease-in-out"
+                >
+                  حمل دریایی
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
+          </div>
+
+          
+        </div>
+        <div class="swiper-pagination mt-10"></div>
+        <!-- Arrows (بدون تغییر) -->
+        <!-- <div class="mt-8 flex items-center justify-between">
+    <button class="service-prev proj-next w-10 h-10 rounded-full bg-slate-900 text-white grid place-items-center hover:bg-slate-800">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 4.5l7.5 7.5L9 19.5"/>
+      </svg>
+    </button>
+    <button class="service-next proj-next w-10 h-10 rounded-full bg-slate-900 text-white grid place-items-center hover:bg-slate-800">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.5L7.5 12 15 4.5"/>
+      </svg>
+    </button>
+  </div> -->
+      </div>
+    </section>
+
+
+    <!-- ============== Global Presence (SVG Placeholder) ============== -->
+    <section id="global-presence" class="py-16 bg-gray-100" dir="rtl">
+      <div class="container max-w-7xl">
+        <!-- Head -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <h2 class="text-gray-700 text-2xl sm:text-3xl font-extrabold">
+            حضور فعال در بازارهای جهانی
+          </h2>
+          <p class="text-gray-500 mt-5 text-sm sm:text-base">
+            حضور جهانی سپند راه آگرین بر پایه‌ی شبکه‌ای معتبر از نمایندگان و
+            همکاری با فورواردِرهای بزرگ دنیاست. به‌عنوان عضو اتاق بازرگانی و با
+            سابقه‌ی چارتری، بخش‌هایی از اروپا، CIS، ترکیه و عراق را پوشش
+            می‌دهیم.
+          </p>
+        </div>
+
+        <!-- Map Wrapper -->
+        <div class="relative">
+          <!-- جایگزین کن: SVG نقشه‌ات را اینجا قرار بده -->
+          <div
+            class="aspect-[21/9] grid place-items-center text-slate-500 text-sm"
+          >
+            <img src="assets/map_blue.svg" alt="" />
+          </div>
+
+          <!-- نمونه پین‌ها (اختیاری)؛ بعد از گذاشتن SVG، مختصات را تغییر بده یا حذف کن -->
+          <span class="map-pin" style="top: 38%; left: 49%"></span>
+          <!-- اروپا -->
+          <span class="map-pin" style="top: 46%; left: 56%"></span>
+          <!-- خاورمیانه -->
+          <span class="map-pin" style="top: 41%; left: 63%"></span>
+          <!-- آسیای میانه -->
+          <span class="map-pin" style="top: 33%; left: 72%"></span>
+          <!-- شرق آسیا -->
+        </div>
+      </div>
+    </section>
+
+    <!-- استایل کمکی برای پین‌ها (Tailwind با کلاس‌های @apply اگر خواستی انتقال بده) -->
+    <style>
+      .map-pin {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border-radius: 9999px;
+        background: #2563eb;
+        box-shadow: 0 0 0 4px rgb(37 99 235 / 0.25);
+        transform: translate(-50%, -50%);
+      }
+    </style>
+
+    <!-- ============== Projects / Carousel ============== -->
+    <section id="projects" class="relative py-16 bg-slate-100">
+      <div class="container max-w-7xl">
+        <!-- Head -->
+        <div class="flex items-center justify-between gap-4 mb-8">
+          <div class="max-w-3xl">
+            <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              پروژه‌ها و فعالیت‌ها
+            </h2>
+            <p class="mt-3 text-sm sm:text-base text-slate-600">
+              نمونه‌هایی واقعی از مسیرهای انجام‌شده؛ از OOG اروپا تا پروژه‌های
+              دمای کنترل‌شده‌ی ایران.
+            </p>
+          </div>
+
+          <!-- Controls on ONE side -->
+          <div class="flex items-center gap-3">
+            <a
+              href="/projects"
+              class="hidden sm:inline text-sm text-slate-700 hover:text-slate-900"
+              >مشاهده همه پروژه‌ها</a
+            >
+            <div class="flex items-center gap-2">
+              <button
+                class="proj-prev w-10 h-10 rounded-full bg-slate-900 text-white grid place-items-center hover:bg-slate-800"
+                aria-label="قبلی"
+              >
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M9 6l6 6-6 6" />
+                </svg>
+              </button>
+              <button
+                class="proj-next w-10 h-10 rounded-full bg-slate-900 text-white grid place-items-center hover:bg-slate-800"
+                aria-label="بعدی"
+              >
+                <!-- chevron-left (RTL) -->
+                <svg
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M15 18l-6-6 6-6" />
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Carousel -->
+        <div class="swiper projects-swiper">
+          <div class="swiper-wrapper">
+            <!-- Card 1 -->
+            <a class="swiper-slide group block">
+              <article
+                class="relative overflow-hidden rounded-2xl bg-slate-900 text-white min-h-[300px]"
+              >
+                <img
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1600&auto=format&fit=crop"
+                  alt=""
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                ></div>
+                <div class="relative p-5 mt-36">
+                  <h3 class="font-bold">
+                    حمل‌های دمای‌ کنترل‌شده فارما از فرانکفورت به تهران
+                  </h3>
+                  <p class="mt-1 text-white/80 text-sm">سرویس اکسپرس</p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 2 -->
+            <a class="swiper-slide group block">
+              <article
+                class="relative overflow-hidden rounded-2xl bg-slate-900 text-white min-h-[300px]"
+              >
+                <img
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop"
+                  alt=""
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                ></div>
+                <div class="relative p-5 mt-36">
+                  <h3 class="font-bold">
+                    گروپاژ دریایی قطعات یدکی از شنژن به گمرک شهیدرجایی
+                  </h3>
+                  <p class="mt-1 text-white/80 text-sm">دریایی LCL</p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 3 -->
+            <a class="swiper-slide group block">
+              <article
+                class="relative overflow-hidden rounded-2xl bg-slate-900 text-white min-h-[300px]"
+              >
+                <img
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?q=80&w=1600&auto=format&fit=crop"
+                  alt=""
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                ></div>
+                <div class="relative p-5 mt-36">
+                  <h3 class="font-bold">
+                    حمل تجهیزات فوق‌ابعاد (OOG) از آنتورپ به عسلوایه
+                  </h3>
+                  <p class="mt-1 text-white/80 text-sm">ترکیبی جاده/دریا</p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 4 -->
+            <a class="swiper-slide group block">
+              <article
+                class="relative overflow-hidden rounded-2xl bg-slate-900 text-white min-h-[300px]"
+              >
+                <img
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1600&auto=format&fit=crop"
+                  alt=""
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                ></div>
+                <div class="relative p-5 mt-36">
+                  <h3 class="font-bold">
+                    اکسپرس هوایی قطعات حساس از دبی به تبریز
+                  </h3>
+                  <p class="mt-1 text-white/80 text-sm">هوایی اکسپرس</p>
+                </div>
+              </article>
+            </a>
+
+            <!-- Card 5 -->
+            <a class="swiper-slide group block">
+              <article
+                class="relative overflow-hidden rounded-2xl bg-slate-900 text-white min-h-[300px]"
+              >
+                <img
+                  class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                  src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1600&auto=format&fit=crop"
+                  alt=""
+                />
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"
+                ></div>
+                <div class="relative p-5 mt-36">
+                  <h3 class="font-bold">
+                    اکسپرس هوایی قطعات حساس از دبی به تبریز
+                  </h3>
+                  <p class="mt-1 text-white/80 text-sm">هوایی اکسپرس</p>
+                </div>
+              </article>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+
+    <!-- ============== Featured Knowledge / Blog ============== -->
+    <section id="knowledge" class="py-16 bg-slate-100" dir="rtl">
+      <div class="container max-w-7xl">
+        <!-- Head -->
+        <div class="text-center max-w-3xl mx-auto mb-10">
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+            مرکز دانش و بلاگ
+          </h2>
+          <p class="mt-3 text-slate-600 text-sm sm:text-base">
+            راهنمای عملی حمل‌ونقل بین‌الملل؛ از انتخاب شیوه‌ی حمل تا اینکوترمز،
+            بیمه، ترخیص و نکات کاهش زمان و هزینه.
+          </p>
+          <a
+            href="/knowledge"
+            class="inline-flex items-center gap-2 mt-4 text-sm font-semibold text-blue-700 hover:text-blue-800"
+          >
+            رفتن به صفحه‌ی اصلی دانش‌نامه
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Grid -->
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <!-- Card 1 -->
+          <a
+            href="/knowledge/incoterms-2020-basics"
+            class="group block rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition"
+          >
+            <div class="relative">
+              <img
+                class="w-full aspect-[4/3] object-cover"
+                src="https://images.unsplash.com/photo-1517511620798-cec17d428bc0?q=80&w=1200&auto=format&fit=crop"
+                alt="Incoterms 2020"
+              />
+              <span
+                class="absolute top-3 right-3 text-[11px] px-2.5 py-1 rounded-full bg-black/70 text-white"
+                >اینکوترمز</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 group-hover:text-slate-700">
+                اینکوترمز ۲۰۲۰ به زبان ساده: مسئولیت‌ها، هزینه‌ها و ریسک‌ها
+              </h3>
+              <p class="mt-2 text-slate-600 text-sm">
+                راهنمای فشرده برای انتخاب قاعده مناسب (از EXW تا DDP) با
+                مثال‌های واردات/صادرات…
+              </p>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a
+            href="/knowledge/lcl-vs-fcl"
+            class="group block rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition"
+          >
+            <div class="relative">
+              <img
+                class="w-full aspect-[4/3] object-cover"
+                src="https://images.unsplash.com/photo-1529078155058-5d716f45d604?q=80&w=1200&auto=format&fit=crop"
+                alt="LCL vs FCL"
+              />
+              <span
+                class="absolute top-3 right-3 text-[11px] px-2.5 py-1 rounded-full bg-black/70 text-white"
+                >دریایی</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 group-hover:text-slate-700">
+                راهنمای انتخاب حمل FCL یا LCL؛ دریایی مقرون‌به‌صرفه
+              </h3>
+              <p class="mt-2 text-slate-600 text-sm">
+                کِی اشتراک کانتینر به‌صرفه‌تر است؟ چک‌لیست تصمیم‌گیری + جدول
+                هزینه/زمان…
+              </p>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a
+            href="/knowledge/cmr-vs-fbl-insurance"
+            class="group block rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition"
+          >
+            <div class="relative">
+              <img
+                class="w-full aspect-[4/3] object-cover"
+                src="https://images.unsplash.com/photo-1504196606672-aef5c9cefc92?q=80&w=1200&auto=format&fit=crop"
+                alt="CMR vs FBL"
+              />
+              <span
+                class="absolute top-3 right-3 text-[11px] px-2.5 py-1 rounded-full bg-black/70 text-white"
+                >بیمه</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 group-hover:text-slate-700">
+                بیمه‌های حمل بین‌الملل: CMR و FBL چه تفاوتی دارند؟
+              </h3>
+              <p class="mt-2 text-slate-600 text-sm">
+                پوشش‌ها، استثناها، سقف مسئولیت و مدارک لازم به زبان ساده…
+              </p>
+            </div>
+          </a>
+
+          <!-- Card 4 -->
+          <a
+            href="/knowledge/customs-hs-checklist"
+            class="group block rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-md transition"
+          >
+            <div class="relative">
+              <img
+                class="w-full aspect-[4/3] object-cover"
+                src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?q=80&w=1200&auto=format&fit=crop"
+                alt="HS & Clearance"
+              />
+              <span
+                class="absolute top-3 right-3 text-[11px] px-2.5 py-1 rounded-full bg-black/70 text-white"
+                >ترخیص</span
+              >
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-slate-900 group-hover:text-slate-700">
+                چک‌لیست ترخیص و ترانزیت: از HS Code تا مجوزها
+              </h3>
+              <p class="mt-2 text-slate-600 text-sm">
+                مسیر استاندارد مستندسازی، خطاهای رایج و نحوه تسریع تشریفات…
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Footer ================= -->
+    <footer class="bg-[#121212] text-white/90 pt-16">
+      <div class="container max-w-7xl">
+        <!-- Top: Contact block -->
+        <div class="grid md:grid-cols-2 gap-8 items-start">
+          <div>
+            <p class="text-xs tracking-widest text-white/60 mb-3">
+              ارتباط با ما
+            </p>
+            <div
+              class="space-y-2 text-2xl sm:text-3xl font-semibold leading-relaxed"
+            >
+              <p>021-0000-0000</p>
+              <p>تهران، خیابان مثال، پلاک ۷۸۹، طبقه ۵</p>
+              <p class="text-white/80">enquiries@spandrah.com</p>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <!-- Optional dotted world map -->
+            <div
+              class="aspect-[3/1] rounded-xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent grid place-items-center text-white/40 text-sm"
+            >
+              <span>شبکه‌ی فعال در مسیرهای بین‌المللی</span>
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-10 border-white/10" />
+
+        <!-- Middle: About + Links + Contact -->
+        <div class="grid gap-10 md:grid-cols-4">
+          <div class="md:col-span-1">
+            <p class="text-sm leading-7 text-white/80">
+              ارائه‌دهنده‌ی راهکارهای مطمئن و کارآمد در حمل‌ونقل بین‌المللی. از
+              فورواردری تا ردیابی لحظه‌ای، کسب‌وکار شما را روان نگه می‌داریم.
+            </p>
+            <div class="flex gap-3 mt-5">
+              <a
+                class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
+                href="#"
+                aria-label="LinkedIn"
+                >in</a
+              >
+              <a
+                class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
+                href="#"
+                aria-label="X"
+                >X</a
+              >
+              <a
+                class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
+                href="#"
+                aria-label="Facebook"
+                >f</a
+              >
+              <a
+                class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
+                href="#"
+                aria-label="Instagram"
+                >◦</a
+              >
+              <a
+                class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
+                href="#"
+                aria-label="YouTube"
+                >▶</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <p class="font-semibold mb-3">خدمات</p>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li><a href="#" class="hover:text-white">فریت فورواردینگ</a></li>
+              <li>
+                <a href="#" class="hover:text-white">انبارداری و توزیع</a>
+              </li>
+              <li><a href="#" class="hover:text-white">ترخیص کالا</a></li>
+              <li><a href="#" class="hover:text-white">ردیابی لحظه‌ای</a></li>
+              <li>
+                <a href="#" class="hover:text-white">مدیریت زنجیره تامین</a>
+              </li>
+              <li><a href="#" class="hover:text-white">حمل چندوجهی</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="font-semibold mb-3">شرکت</p>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li><a href="#about" class="hover:text-white">درباره ما</a></li>
+              <li><a href="#team" class="hover:text-white">تیم</a></li>
+              <li><a href="#services" class="hover:text-white">خدمات</a></li>
+              <li>
+                <a href="#cases" class="hover:text-white">مطالعات موردی</a>
+              </li>
+              <li>
+                <a href="#quote" class="hover:text-white">استعلام قیمت</a>
+              </li>
+              <li><a href="#blog" class="hover:text-white">بلاگ</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="font-semibold mb-3">تماس</p>
+            <ul class="space-y-2 text-sm text-white/80">
+              <li>تهران، خیابان مثال، پلاک ۷۸۹، طبقه ۵</li>
+              <li>کد پستی ۱۰۰۱۸</li>
+              <li>021-0000-0000</li>
+              <li>enquiries@spandrah.com</li>
+            </ul>
+          </div>
+        </div>
+
+        <hr class="my-10 border-white/10" />
+
+        <!-- Bottom bar -->
+        <div
+          class="flex flex-col md:flex-row items-center justify-between gap-4 py-6 text-xs text-white/60"
+        >
+          <p>© 2025 Spand Rah Agrin. کلیه حقوق محفوظ است.</p>
+          <div class="flex items-center gap-6">
+            <a href="#" class="hover:text-white/80">حریم خصوصی</a>
+            <a href="#" class="hover:text-white/80">شرایط استفاده</a>
+            <a href="#" class="hover:text-white/80">تنظیمات کوکی</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =============== Scripts =============== -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
+    <script>
+      // Initialize Lenis
+      const lenis = new Lenis({
+        autoRaf: true,
+      });
+
+      // Listen for the scroll event and log the event data
+      lenis.on("scroll", (e) => {
+        console.log(e);
+      });
+
+      // Home Scroll
+      // فرض: gsap از قبل لود شده
+      gsap.registerPlugin(ScrollToPlugin);
+
+      const headerOffset = 72; // اگر هدر ثابت داری، فاصله‌ی دلخواه از بالا
+      const targetSelector = "#services"; // سکشنی که می‌خوای بهش اسکرول بشه
+
+      const btn = document.getElementById("scrollDownBtn");
+      if (btn) {
+        const goDown = (e) => {
+          e.preventDefault();
+          gsap.to(window, {
+            duration: 1,
+            ease: "power2.out",
+            scrollTo: {
+              y: targetSelector,
+              offsetY: headerOffset,
+              autoKill: true,
+            },
+          });
+        };
+
+        btn.addEventListener("click", goDown);
+        // دسترسی بهتر: با Enter/Space هم اسکرول کن
+        btn.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") goDown(e);
+        });
+      }
+
+      // Navbar entrance
+      gsap.from(".topnav", {
+        y: -24,
+        opacity: 0,
+        duration: 0.6,
+        ease: "power3.out",
+        delay: 0.2,
+      });
+
+      // فرض: gsap و Swiper قبلاً لود شده‌اند
+      const progressCircle = document.querySelector(".autoplay-progress svg");
+      const progressContent = document.querySelector(".autoplay-progress span");
+
+      const swiper = new Swiper(".slider", {
+        slidesPerView: 1,
+        effect: "fade",
+        speed: 900,
+        autoplay: { delay: 4000, disableOnInteraction: false },
+        pagination: { el: ".swiper-pagination", clickable: true },
+        rewind: true,
+        keyboard: {
+          enabled: true,
+        },
+        navigation: {
+          nextEl: ".hero-next",
+          prevEl: ".hero-prev",
+        },
+        on: {
+          init(s) {
+            // همه‌ی متن‌ها پنهان، متن اسلاید فعال نمایان
+            const slides = s.slides;
+            slides.forEach((sl) =>
+              gsap.set(sl.querySelector(".slide-content"), {
+                autoAlpha: 0,
+                y: 15,
+              })
+            );
+            gsap.set(slides[s.activeIndex].querySelector(".slide-content"), {
+              autoAlpha: 1,
+              y: 0,
+            });
+
+            // زوم اولیه‌ی مدیای اسلاید فعال
+            const activeMedia =
+              slides[s.activeIndex].querySelector(".hero-slide > *");
+            gsap.set(activeMedia, { scale: 1 });
+            gsap.to(activeMedia, {
+              scale: 1.06,
+              duration: 4,
+              ease: "power1.out",
+            });
+          },
+          slideChangeTransitionStart(s) {
+            const prev = s.slides[s.previousIndex];
+            const next = s.slides[s.activeIndex];
+
+            // متن قبلی مخفی
+            if (prev) {
+              gsap.to(prev.querySelector(".slide-content"), {
+                autoAlpha: 0,
+                y: 15,
+                duration: 0.4,
+                ease: "power2.out",
+              });
+              gsap.to(prev.querySelector(".hero-slide > *"), {
+                scale: 1,
+                duration: 0.8,
+                ease: "power2.out",
+              });
+            }
+
+            // متن بعدی با fade + slide-up
+            gsap.fromTo(
+              next.querySelector(".slide-content"),
+              { autoAlpha: 0, y: 15 },
+              {
+                autoAlpha: 1,
+                y: 0,
+                duration: 0.7,
+                ease: "power3.out",
+                delay: 0.1,
+              }
+            );
+
+            // زوم خیلی نرم روی تصویر/ویدئوی اسلاید فعال
+            const media = next.querySelector(".hero-slide > *");
+            gsap.fromTo(
+              media,
+              { scale: 1 },
+              { scale: 1.02, duration: 4, ease: "power1.out" }
+            );
+          },
+          autoplayTimeLeft(s, time, progress) {
+            progressCircle.style.setProperty("--progress", 1 - progress);
+            progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+          },
+        },
+      });
+    </script>
+
+    <script>
+      const projSwiper = new Swiper(".projects-swiper", {
+        speed: 700,
+        spaceBetween: 24,
+        slidesPerView: 1.1, // موبایل
+        centeredSlides: false,
+        navigation: { nextEl: ".proj-next", prevEl: ".proj-prev" },
+        breakpoints: {
+          640: { slidesPerView: 1.6, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 22 },
+          1024: { slidesPerView: 3, spaceBetween: 24 }, // دسکتاپ: ۳ آیتم
+        },
+      });
+    </script>
+    <script>
+      // mobile menu toggle and header scroll behavior
+      (() => {
+        const mobileBtn = document.querySelector(".mobile-menu-btn");
+        const mobileNav = document.getElementById("mobileNav");
+        const overlay = mobileNav?.querySelector(".overlay");
+        const panel = document.getElementById("mobileNavPanel");
+        const closeBtn = document.querySelector(".close-mobile");
+        const topnav = document.querySelector(".topnav");
+
+        // prepare GSAP timeline for smooth slide-in from right
+        gsap.set(panel, { x: "100%" });
+        gsap.set(overlay, { opacity: 0, pointerEvents: "none" });
+        const menuTl = gsap
+          .timeline({ paused: true })
+          .to(
+            overlay,
+            {
+              duration: 0.28,
+              opacity: 0.6,
+              pointerEvents: "auto",
+              ease: "power2.out",
+            },
+            0
+          )
+          .to(panel, { duration: 0.38, x: "0%", ease: "power3.out" }, 0);
+
+        function openMobile() {
+          mobileNav.classList.remove("hidden");
+          panel.setAttribute("aria-hidden", "false");
+          menuTl.play();
+          mobileBtn?.setAttribute("aria-expanded", "true");
+          document.body.style.overflow = "hidden";
+        }
+        function closeMobile() {
+          menuTl.reverse().then(() => {
+            mobileNav.classList.add("hidden");
+            panel.setAttribute("aria-hidden", "true");
+          });
+          mobileBtn?.setAttribute("aria-expanded", "false");
+          document.body.style.overflow = "";
+        }
+
+        mobileBtn?.addEventListener("click", openMobile);
+        closeBtn?.addEventListener("click", closeMobile);
+        overlay?.addEventListener("click", closeMobile);
+
+        // add scrolled class on header
+        const onScroll = () => {
+          if (window.scrollY > 20) topnav.classList.add("scrolled");
+          else topnav.classList.remove("scrolled");
+        };
+        onScroll();
+        window.addEventListener("scroll", onScroll);
+
+        // Mobile: toggle submenu on tap
+        document.querySelectorAll(".mobile-parent-btn").forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const submenu = btn.nextElementSibling;
+            const open = submenu.classList.toggle("open");
+            btn.setAttribute("aria-expanded", String(open));
+          });
+        });
+
+        // Desktop: open/close dropdown only on click (and keyboard). Close others automatically. Close on outside click / Escape.
+        document.querySelectorAll(".nav-item").forEach((item) => {
+          const btn = item.querySelector("button");
+          const dd = item.querySelector(".nav-dropdown");
+          if (!btn || !dd) return;
+
+          // toggle on click
+          btn.addEventListener("click", (e) => {
+            e.stopPropagation();
+            const opening = !dd.classList.contains("open");
+            // close all other dropdowns
+            document.querySelectorAll(".nav-dropdown.open").forEach((other) => {
+              if (other !== dd) {
+                other.classList.remove("open");
+                const otherBtn = other.parentElement.querySelector("button");
+                otherBtn?.setAttribute("aria-expanded", "false");
+              }
+            });
+            dd.classList.toggle("open", opening);
+            btn.setAttribute("aria-expanded", String(opening));
+          });
+
+          // keyboard support: Enter / Space to toggle, Escape to close
+          btn.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              btn.click();
+            } else if (e.key === "Escape") {
+              dd.classList.remove("open");
+              btn.setAttribute("aria-expanded", "false");
+              btn.focus();
+            }
+          });
+        });
+
+        // close dropdowns when clicking outside
+        document.addEventListener("click", (e) => {
+          if (!e.target.closest(".nav-item")) {
+            document.querySelectorAll(".nav-dropdown.open").forEach((dd) => {
+              dd.classList.remove("open");
+              const b = dd.parentElement.querySelector("button");
+              b?.setAttribute("aria-expanded", "false");
+            });
+          }
+        });
+
+        // close on Escape globally
+        document.addEventListener("keydown", (e) => {
+          if (e.key === "Escape") {
+            document.querySelectorAll(".nav-dropdown.open").forEach((dd) => {
+              dd.classList.remove("open");
+              const b = dd.parentElement.querySelector("button");
+              b?.setAttribute("aria-expanded", "false");
+            });
+          }
+        });
+      })();
+    </script>
+    <script>
+      const servicesSwiper = new Swiper(".services-swiper", {
+        loop: true,
+        speed: 700,
+        spaceBetween: 24,
+        slidesPerView: 1.05, // موبایل: نزدیک به تمام عرض
+        centeredSlides: false,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: { nextEl: ".service-next", prevEl: ".service-prev" },
+        // اگر AutoPlay خواستی: autoplay: { delay: 4500, disableOnInteraction: false },
+        breakpoints: {
+          640: { slidesPerView: 1.5, spaceBetween: 24 }, // موبایل بزرگ
+          768: { slidesPerView: 2.5, spaceBetween: 28 }, // تبلت
+          1024: { slidesPerView: 3.5, spaceBetween: 32 }, // دسکتاپ: حداقل ۳ کارت
+          1440: { slidesPerView: 4.5, spaceBetween: 36 }, // نمایش وسیع‌تر
+        },
+      });
+    </script>
+  </body>
+</html>
