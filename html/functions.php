@@ -214,15 +214,29 @@ add_filter('excerpt_more', function ($more) {
     return ' …';
 });
 
+/* -----------------------------------------------------------------------
+ *   OPTIONAL: POLYFILLS / COMPAT
+ * -------------------------------------------------------------------- */
+
+// اگر تمایل داری به صورت سراسری defer بدی (با احتیاط!)
+add_filter('script_loader_tag', function( $tag, $handle, $src ){
+    // هندل‌هایی که نباید defer شوند را مستثنا کن (مثلا jquery-core اگر استفاده می‌شود).
+    $excluded = [ 'jquery-core', 'jquery-migrate' ];
+    if ( in_array($handle, $excluded, true) ) { return $tag; }
+    if ( false === stripos($tag, ' defer') ) {
+        $tag = str_replace(' src', ' defer src', $tag);
+    }
+    return $tag;
+}, 10, 3);
 
 /* -----------------------------------------------------------------------
  *   INCLUDES
  * -------------------------------------------------------------------- */
 $includes = [
     'inc/custom-post-types.php',
-    // 'inc/taxonomies.php',
-    // 'inc/template-tags.php',
-    // 'inc/blocks.php',
+    'inc/taxonomies.php',
+    'inc/template-tags.php',
+    'inc/blocks.php',
     'inc/acf-settings.php',
 ];
 foreach ($includes as $rel) {
