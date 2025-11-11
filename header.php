@@ -32,7 +32,6 @@
             <span>SEPAND RAH AGRIN</span>
           </div>
         </div>
-        <!-- Center: nav -->
         <!-- Center: nav (Desktop) -->
         <nav class="hidden md:flex items-center gap-6 text-sm text-white/80" aria-label="<?php esc_attr_e('Primary Menu', 'bamdad-studio'); ?>">
           <?php

@@ -96,7 +96,7 @@ get_header(); ?>
               </div>
             </div>
 
-            <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/20 to-black/50"></div>
+            <div class="absolute inset-0 bg-linear-to-t from-gray/20 via-gray/40 to-gray/50"></div>
           </div>
         <?php endwhile; ?>
 
@@ -126,7 +126,6 @@ get_header(); ?>
               </div>
             </div>
           </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-transparent via-black/20 to-black/50"></div>
         </div>
       <?php endif; ?>
     </div>
@@ -219,9 +218,6 @@ get_header(); ?>
     </div>
   </div>
 
-  <!-- white overlay under hero for smooth transition to services  -->
-  <div
-    class="absolute -bottom-24 left-0 right-0 h-24 bg-gradient-to-b from-transparent to-white pointer-events-none"></div>
 </section>
 
 <!-- ================= Services ================= -->

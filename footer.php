@@ -3,29 +3,43 @@
 } ?>
 
 <!-- ================= Footer ================= -->
-<footer class="bg-[#121212] text-white/90 pt-16">
-  <div class="container mx-auto max-w-7xl">
-    <!-- Top: Contact block -->
-    <div class="grid md:grid-cols-2 gap-8 items-start">
-      <div>
-        <p class="text-xs tracking-widest text-white/60 mb-3">
-          ارتباط با ما
-        </p>
-        <div
-          class="space-y-2 text-2xl sm:text-3xl font-semibold leading-relaxed">
-          <p>021-0000-0000</p>
-          <p>تهران، خیابان مثال، پلاک ۷۸۹، طبقه ۵</p>
-          <p class="text-white/80">enquiries@spandrah.com</p>
-        </div>
-      </div>
-      <div class="hidden md:block">
-        <!-- Optional dotted world map -->
-        <div
-          class="aspect-[3/1] rounded-xl border border-white/10 bg-gradient-to-b from-white/5 to-transparent grid place-items-center text-white/40 text-sm">
-          <span>شبکه‌ی فعال در مسیرهای بین‌المللی</span>
+<div class="relative w-full h-[500px] overflow-hidden"
+         style="background-image:url('https://sepandrah.bamdad.studio/wp-content/uploads/2025/11/slider_6.jpg'); background-size:cover; background-position:center;  background-attachment: fixed; background-repeat:no-repeat;">
+  <!-- Overlay برای خوانایی -->
+  <div class="absolute inset-0 bg-black/45 md:bg-black/40"></div>
+
+  <!-- محتوا -->
+  <div class="relative z-10 h-full">
+    <div class="container mx-auto max-w-7xl px-4 h-full">
+      <div class="h-full flex items-center justify-center text-center">
+        <div class="space-y-5 md:space-y-6">
+          <h1 class="text-white font-extrabold leading-tight text-3xl md:text-5xl lg:text-6xl">
+            آماده‌ای به اهدافـت برسی؟
+          </h1>
+          <p class="text-white/90 text-sm md:text-base">
+            کنارت هستیم تا به قله‌های تازه برسی و یک قدم جلوتر از رقبا باشی.
+          </p>
+
+          <div class="pt-2">
+            <a href="/contact"
+               class="inline-flex items-center gap-2 rounded-full bg-white text-slate-900 px-5 py-2.5 text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition">
+              ارتباط با ما
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+                   class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l8-8M7 7h10v10"/>
+              </svg>
+            </a>
+          </div>
         </div>
       </div>
     </div>
+  </div>
+</div>
+<footer class="bg-[#121212] text-white/90 pt-16">
+  <!-- === Full-width Hero (بالای منو) === -->
+  <div class="container mx-auto max-w-7xl">
+    <!-- Top: Contact block -->
+    
 
     <hr class="my-10 border-white/10" />
 
