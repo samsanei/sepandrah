@@ -192,8 +192,7 @@
         slidesPerView: 1,
         effect: "fade",
         speed: 900,
-        // autoplay: { delay: 4000, disableOnInteraction: false },
-        autoplay: false ,
+        autoplay: { delay: 4000, disableOnInteraction: false },
         pagination: { el: ".swiper-pagination", clickable: true },
         rewind: true,
         keyboard: {

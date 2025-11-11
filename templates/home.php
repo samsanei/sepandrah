@@ -156,12 +156,10 @@ get_header(); ?>
 
           <!-- 2) Center Scroll Button -->
           <div class="text-white/80">
-            <!-- دکمه پالس‌دار -->
             <button
               id="scrollDownBtn"
               class="relative w-10 h-10 rounded-full flex items-center justify-center overflow-visible"
               aria-label="Scroll to next section">
-              <!-- فلش رو به پایین -->
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -174,8 +172,6 @@ get_header(); ?>
                   stroke-linejoin="round"
                   d="M19.5 8.25 12 15.75 4.5 8.25" />
               </svg>
-
-              <!-- حلقه پالس -->
               <span
                 class="pulse-ring absolute inset-0 rounded-full pointer-events-none"></span>
             </button>
@@ -217,6 +213,7 @@ get_header(); ?>
               </svg>
             </button>
           </div>
+
         </div>
       </div>
     </div>
