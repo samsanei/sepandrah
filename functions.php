@@ -19,7 +19,7 @@ if ( ! defined('APP_TEXTDOMAIN') ) {
 }
 if ( ! defined('APP_VER') ) {
     $ver = wp_get_theme()->get('Version');
-    define('APP_VER', $ver ? $ver : '1.0.4');
+    define('APP_VER', $ver ? $ver : '1.0.8');
 }
 if ( ! defined('APP_PATH') ) {
     define('APP_PATH', trailingslashit( get_template_directory() ));
