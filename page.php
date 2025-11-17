@@ -24,7 +24,7 @@
 
 <!-- Page Content -->
 <section class="py-12 md:py-20">
-  <div class="container mx-auto px-4 max-w-4xl prose prose-lg dark:prose-invert">
+  <div class="wp-content-wrapper container mx-auto px-4 max-w-4xl prose prose-lg dark:prose-invert">
     <?php
       if (have_posts()) :
         while (have_posts()) : the_post();

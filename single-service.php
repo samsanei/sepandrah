@@ -50,11 +50,11 @@ $svc_archive = get_post_type_archive_link('service');
 ?>
 <!-- Hero -->
 <section class="mx-auto relative">
-    <div class="h-[50vh] w-full relative overflow-hidden">
-        <div class="absolute inset-0 bg-linear-to-t from-black/60 via-transparent to-transparent"></div>
+    <div class="h-[55vh] w-full relative overflow-hidden">
+        <div class="absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent"></div>
         <?php echo $hero_img_html; ?>
 
-        <div class="absolute inset-0 container max-w-7xl flex items-end pt-16">
+        <div class="absolute inset-0 container mx-auto max-w-7xl flex items-end pt-16 px-5 md:px-0">
             <div class="text-right pb-8">
                 <?php if ($hero_sub) : ?>
                     <p class="text-white/80 text-sm mb-2"><?php echo esc_html($hero_sub); ?></p>
@@ -106,14 +106,13 @@ $svc_archive = get_post_type_archive_link('service');
 </section>
 
 <!-- Main content -->
-<main class="container mx-auto max-w-7xl py-12">
+<main class="container mx-auto max-w-7xl px-5 md:px-0 pb-12">
     <div class="grid gap-8 md:grid-cols-3">
         <!-- Main column -->
-        <article class="md:col-span-2 space-y-8">
+        <article class="md:col-span-2 space-y-8 leading-8">
 
             <!-- معرفی سرویس -->
             <section>
-                <h2 class="text-3xl font-extrabold text-slate-900"><?php the_title(); ?></h2>
 
                 <?php if ($intro) : ?>
                     <p class="mt-3 text-slate-600 leading-relaxed"><?php echo wp_kses_post(wpautop($intro)); ?></p>
@@ -123,7 +122,7 @@ $svc_archive = get_post_type_archive_link('service');
             <!-- محتوای کامل (ادیتور) -->
             <?php if (get_the_content()) : ?>
                 <section>
-                    <div class="prose prose-slate prose-p:leading-7 max-w-none">
+                    <div class="wp-content-wrapper prose prose-slate prose-p:leading-7 max-w-none">
                         <?php the_content(); ?>
                     </div>
                 </section>

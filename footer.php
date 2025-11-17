@@ -3,74 +3,68 @@
 } ?>
 
 <!-- ================= Footer ================= -->
-<div class="relative w-full h-[500px] overflow-hidden"
-         style="background-image:url('https://sepandrah.bamdad.studio/wp-content/uploads/2025/11/slider_6.jpg'); background-size:cover; background-position:center;  background-attachment: fixed; background-repeat:no-repeat;">
-  <!-- Overlay برای خوانایی -->
-  <div class="absolute inset-0 bg-black/45 md:bg-black/40"></div>
 
-  <!-- محتوا -->
-  <div class="relative z-10 h-full">
-    <div class="container mx-auto max-w-7xl px-4 h-full">
-      <div class="h-full flex items-center justify-center text-center">
-        <div class="space-y-5 md:space-y-6">
-          <h1 class="text-white font-extrabold leading-tight text-3xl md:text-5xl lg:text-6xl">
-            آماده‌ای به اهدافـت برسی؟
-          </h1>
-          <p class="text-white/90 text-sm md:text-base">
-            کنارت هستیم تا به قله‌های تازه برسی و یک قدم جلوتر از رقبا باشی.
-          </p>
+<footer class="bg-slate-950 text-white/90">
+  <div class="relative w-full h-[500px] overflow-hidden
+            bg-[url('https://sepandrah.bamdad.studio/wp-content/themes/sepandrah/assets/images/bg_footer_4.jpg')]
+            bg-cover bg-center md:bg-fixed">
+    <!-- Overlay برای خوانایی -->
+    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-black/40 to-transparent"></div>
 
-          <div class="pt-2">
-            <a href="/contact"
-               class="inline-flex items-center gap-2 rounded-full bg-white text-slate-900 px-5 py-2.5 text-sm md:text-base font-semibold shadow-lg hover:shadow-xl transition">
-              ارتباط با ما
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
-                   class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M7 17l8-8M7 7h10v10"/>
-              </svg>
-            </a>
+    <!-- محتوا -->
+    <div class="relative z-10 h-full">
+      <div class="container mx-auto max-w-7xl px-4 h-full">
+        <div class="h-full flex items-center justify-center text-center">
+          <div class="space-y-5 md:space-y-6">
+            <h3 class="text-white font-extrabold leading-tight text-3xl">
+             سپند راه آگرین همراه مطمئن شما در تجارت بین‌الملل
+            </h1>
+            <p class="text-white/90 text-xs md:text-base">
+             از تأمین تا حمل و ترخیص—تحویل به‌موقع، شفافیت کامل و کاهش ریسک در زنجیره تأمین شما.
+            </p>
+
+<div class="pt-4">
+  <a href="/contact" class="group inline-flex items-center gap-3 rounded-full bg-white text-slate-900 px-1 py-1 text-sm font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-[1px]">
+    <span class="ps-3">درخواست مشاوره</span>
+    <span class="w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
+      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25" />
+    </svg>
+
+    </span>
+  </a>
+</div>
+
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
-<footer class="bg-[#121212] text-white/90 pt-16">
   <!-- === Full-width Hero (بالای منو) === -->
   <div class="container mx-auto max-w-7xl">
-    <!-- Top: Contact block -->
-    
-
-    <hr class="my-10 border-white/10" />
-
     <!-- Middle: About + Links + Contact -->
-    <div class="grid gap-10 md:grid-cols-4">
-      <div class="md:col-span-1">
-        <p class="text-sm leading-7 text-white/80">
+    <div class="grid gap-10 md:grid-cols-4 py-18 px-10 md:px-0">
+      <div class="col-span-2 md:col-span-1">
+        <div class="flex items-center gap-3 mb-10">
+          <div class="w-18 h-18 grid place-items-center text-white">
+            <!-- <span class="text-sm font-extrabold tracking-widest">SRA</span> -->
+            <img src="https://sepandrah.bamdad.studio/wp-content/themes/sepandrah/assets/images/logo_sepand_rah_white.svg" alt="سپند راه آگرین">
+          </div>
+          <div class="flex flex-col text-xs text-white/80 gap-1">
+            <span class="text-base">سپند راه آگرین</span>
+            <span>SEPAND RAH AGRIN</span>
+          </div>
+        </div>
+        <p class="text-sm leading-7 text-white/80 text-justify">
           ارائه‌دهنده‌ی راهکارهای مطمئن و کارآمد در حمل‌ونقل بین‌المللی. از
           فورواردری تا ردیابی لحظه‌ای، کسب‌وکار شما را روان نگه می‌داریم.
         </p>
         <div class="flex gap-3 mt-5">
           <a
-            class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
+            class="w-auto h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
             href="#"
-            aria-label="LinkedIn">in</a>
-          <a
-            class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
-            href="#"
-            aria-label="X">X</a>
-          <a
-            class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
-            href="#"
-            aria-label="Facebook">f</a>
-          <a
-            class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
-            href="#"
-            aria-label="Instagram">◦</a>
-          <a
-            class="w-9 h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
-            href="#"
-            aria-label="YouTube">▶</a>
+            aria-label="Instagram">اینستاگرم
+          </a>
         </div>
       </div>
 
@@ -117,7 +111,7 @@
       </div>
     </div>
 
-    <hr class="my-10 border-white/10" />
+    <hr class=" border-white/10" />
 
     <!-- Bottom bar -->
     <div
@@ -131,6 +125,20 @@
     </div>
   </div>
 </footer>
+
+<!-- دکمه بازگشت به بالا -->
+<div id="scrollTopBtn"
+  class="fixed bottom-6 right-6 z-50 opacity-0 pointer-events-none group cursor-pointer inline-flex items-center gap-3 rounded-full text-slate-900 text-sm font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-[1px]">
+  <span
+    class="w-12 h-12 rounded-full bg-slate-900/40 text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110 group-hover:bg-slate-900">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+      stroke-width="1.5" stroke="currentColor" class="size-3">
+      <path stroke-linecap="round" stroke-linejoin="round"
+        d="M4.5 10.5 12 3m0 0 7.5 7.5M12 3v18" />
+    </svg>
+  </span>
+</div>
+
 
 <!-- =============== Scripts =============== -->
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -356,217 +364,271 @@
 </script>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileBtn = document.querySelector(".mobile-menu-btn");
-  const mobileNav = document.getElementById("mobileNav");
-  const overlay   = mobileNav?.querySelector(".overlay");
-  const panel     = document.getElementById("mobileNavPanel");
-  const closeBtn  = document.querySelector(".close-mobile");
-  const topnav    = document.querySelector(".topnav");
+  document.addEventListener('DOMContentLoaded', function() {
+    const mobileBtn = document.querySelector(".mobile-menu-btn");
+    const mobileNav = document.getElementById("mobileNav");
+    const overlay = mobileNav?.querySelector(".overlay");
+    const panel = document.getElementById("mobileNavPanel");
+    const closeBtn = document.querySelector(".close-mobile");
+    const topnav = document.querySelector(".topnav");
 
-  // ---- GSAP guard
-  const hasGSAP = typeof window.gsap !== 'undefined';
-  if (hasGSAP) {
-    gsap.set(panel, { x: "100%" });
-    gsap.set(overlay, { opacity: 0, pointerEvents: "none" });
-  } else {
-    if (panel)   panel.style.transform = "translateX(100%)";
-    if (overlay) { overlay.style.opacity = "0"; overlay.style.pointerEvents = "none"; }
-  }
-
-  function openMobile() {
-    mobileNav.classList.remove("hidden");
-    panel?.setAttribute("aria-hidden","false");
-    mobileBtn?.setAttribute("aria-expanded","true");
-    document.body.style.overflow = "hidden";
+    // ---- GSAP guard
+    const hasGSAP = typeof window.gsap !== 'undefined';
     if (hasGSAP) {
-      const tl = gsap.timeline();
-      tl.to(overlay, { duration:.28, opacity:.6, pointerEvents:"auto", ease:"power2.out" }, 0)
-        .to(panel,   { duration:.38, x:"0%", ease:"power3.out" }, 0);
-    } else {
-      overlay.style.opacity = ".6";
-      overlay.style.pointerEvents = "auto";
-      panel.style.transform = "translateX(0%)";
-    }
-  }
-  function closeMobile() {
-    if (hasGSAP) {
-      const tl = gsap.timeline({
-        onComplete(){ mobileNav.classList.add("hidden"); panel?.setAttribute("aria-hidden","true"); }
+      gsap.set(panel, {
+        x: "100%"
       });
-      tl.to(panel,   { duration:.28, x:"100%", ease:"power2.in" }, 0)
-        .to(overlay, { duration:.28, opacity:0, pointerEvents:"none", ease:"power2.in" }, 0);
+      gsap.set(overlay, {
+        opacity: 0,
+        pointerEvents: "none"
+      });
     } else {
-      panel.style.transform = "translateX(100%)";
-      overlay.style.opacity = "0";
-      overlay.style.pointerEvents = "none";
-      mobileNav.classList.add("hidden");
-      panel?.setAttribute("aria-hidden","true");
+      if (panel) panel.style.transform = "translateX(100%)";
+      if (overlay) {
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+      }
     }
-    mobileBtn?.setAttribute("aria-expanded","false");
-    document.body.style.overflow = "";
-  }
-  mobileBtn?.addEventListener("click", openMobile);
-  closeBtn?.addEventListener("click", closeMobile);
-  overlay?.addEventListener("click", closeMobile);
 
-  // Header scroll
-  const onScroll = () => {
-    if (window.scrollY > 20) topnav?.classList.add("scrolled");
-    else topnav?.classList.remove("scrolled");
-  };
-  onScroll();
-  window.addEventListener("scroll", onScroll);
+    function openMobile() {
+      mobileNav.classList.remove("hidden");
+      panel?.setAttribute("aria-hidden", "false");
+      mobileBtn?.setAttribute("aria-expanded", "true");
+      document.body.style.overflow = "hidden";
+      if (hasGSAP) {
+        const tl = gsap.timeline();
+        tl.to(overlay, {
+            duration: .28,
+            opacity: .6,
+            pointerEvents: "auto",
+            ease: "power2.out"
+          }, 0)
+          .to(panel, {
+            duration: .38,
+            x: "0%",
+            ease: "power3.out"
+          }, 0);
+      } else {
+        overlay.style.opacity = ".6";
+        overlay.style.pointerEvents = "auto";
+        panel.style.transform = "translateX(0%)";
+      }
+    }
 
-  // =========== MOBILE: toggles ===========
-  const mobileMenu = document.getElementById('mobile-primary');
-  if (mobileMenu) {
-    mobileMenu.querySelectorAll('li.menu-item-has-children').forEach((li) => {
-      const a   = li.querySelector(':scope > a');
-      const sub = li.querySelector(':scope > .sub-menu');
-      if (!sub) return;
+    function closeMobile() {
+      if (hasGSAP) {
+        const tl = gsap.timeline({
+          onComplete() {
+            mobileNav.classList.add("hidden");
+            panel?.setAttribute("aria-hidden", "true");
+          }
+        });
+        tl.to(panel, {
+            duration: .28,
+            x: "100%",
+            ease: "power2.in"
+          }, 0)
+          .to(overlay, {
+            duration: .28,
+            opacity: 0,
+            pointerEvents: "none",
+            ease: "power2.in"
+          }, 0);
+      } else {
+        panel.style.transform = "translateX(100%)";
+        overlay.style.opacity = "0";
+        overlay.style.pointerEvents = "none";
+        mobileNav.classList.add("hidden");
+        panel?.setAttribute("aria-hidden", "true");
+      }
+      mobileBtn?.setAttribute("aria-expanded", "false");
+      document.body.style.overflow = "";
+    }
+    mobileBtn?.addEventListener("click", openMobile);
+    closeBtn?.addEventListener("click", closeMobile);
+    overlay?.addEventListener("click", closeMobile);
 
-      sub.setAttribute('data-open', 'false');
+    // Header scroll
+    const onScroll = () => {
+      if (window.scrollY > 20) topnav?.classList.add("scrolled");
+      else topnav?.classList.remove("scrolled");
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll);
 
-      const btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'parent-toggle flex items-center justify-between w-full px-3 py-2 rounded-lg text-left text-slate-800 bg-slate-100';
-      btn.setAttribute('aria-expanded', 'false');
+    // =========== MOBILE: toggles ===========
+    const mobileMenu = document.getElementById('mobile-primary');
+    if (mobileMenu) {
+      mobileMenu.querySelectorAll('li.menu-item-has-children').forEach((li) => {
+        const a = li.querySelector(':scope > a');
+        const sub = li.querySelector(':scope > .sub-menu');
+        if (!sub) return;
 
-      const id = li.id ? `sub-${li.id}` : `sub-${Math.random().toString(36).slice(2)}`;
-      sub.id = sub.id || id;
-      btn.setAttribute('aria-controls', sub.id);
+        sub.setAttribute('data-open', 'false');
 
-      btn.innerHTML = `
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'parent-toggle flex items-center justify-between w-full';
+        btn.setAttribute('aria-expanded', 'false');
+
+        const id = li.id ? `sub-${li.id}` : `sub-${Math.random().toString(36).slice(2)}`;
+        sub.id = sub.id || id;
+        btn.setAttribute('aria-controls', sub.id);
+
+        btn.innerHTML = `
         <span class="text-right flex-1">${a ? a.textContent : '—'}</span>
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
       `;
 
-      if (a) a.style.display = 'none';
-      li.insertBefore(btn, sub);
+        if (a) a.style.display = 'none';
+        li.insertBefore(btn, sub);
 
-      btn.addEventListener('click', () => {
-        const isOpen = sub.getAttribute('data-open') === 'true';
-        // close others
-        mobileMenu.querySelectorAll('.sub-menu[data-open="true"]').forEach((other) => {
-          if (other !== sub) {
-            other.setAttribute('data-open', 'false');
-            const otherBtn = other.previousElementSibling;
-            if (otherBtn && otherBtn.matches('.parent-toggle')) {
-              otherBtn.setAttribute('aria-expanded', 'false');
+        btn.addEventListener('click', () => {
+          const isOpen = sub.getAttribute('data-open') === 'true';
+          // close others
+          mobileMenu.querySelectorAll('.sub-menu[data-open="true"]').forEach((other) => {
+            if (other !== sub) {
+              other.setAttribute('data-open', 'false');
+              const otherBtn = other.previousElementSibling;
+              if (otherBtn && otherBtn.matches('.parent-toggle')) {
+                otherBtn.setAttribute('aria-expanded', 'false');
+              }
             }
-          }
+          });
+          sub.setAttribute('data-open', String(!isOpen));
+          btn.setAttribute('aria-expanded', String(!isOpen));
+          // نمایش/مخفی ساده
+          sub.style.display = isOpen ? 'none' : 'block';
         });
-        sub.setAttribute('data-open', String(!isOpen));
-        btn.setAttribute('aria-expanded', String(!isOpen));
-        // نمایش/مخفی ساده
-        sub.style.display = isOpen ? 'none' : 'block';
       });
-    });
-  }
+    }
 
-  // =========== DESKTOP: submenu prepare (two-columns + caret) ===========
-  const desktopMenu = document.querySelector('.menu-desktop');
-  if (desktopMenu) {
-    // 1) والد‌ها relative
-    desktopMenu.querySelectorAll('li.menu-item-has-children').forEach(li=>{
-      li.classList.add('relative');
-    });
-
-    // 2) دو ستونه در صورت >6 آیتم + استایل لینک‌های داخلی
-    desktopMenu.querySelectorAll('li.menu-item-has-children > .sub-menu').forEach((dd)=>{
-      const items = dd.querySelectorAll(':scope > li');
-      if (items.length > 6) dd.classList.add('two-cols'); else dd.classList.remove('two-cols');
-
-      dd.querySelectorAll(':scope > li > a').forEach(a=>{
-        a.classList.add('block','px-3','py-2','rounded-lg','hover:bg-slate-50','text-sm','text-slate-700');
-      });
-    });
-
-    // 3) افزودن فلش به والد‌هایی که ندارند
-    desktopMenu.querySelectorAll('li.menu-item-has-children > a').forEach((a)=>{
-      if (!a.querySelector('.caret')) {
-        const svg = document.createElementNS("http://www.w3.org/2000/svg","svg");
-        svg.setAttribute("viewBox","0 0 24 24");
-        svg.setAttribute("width","14");
-        svg.setAttribute("height","14");
-        svg.classList.add("caret");
-        svg.innerHTML = '<path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
-        a.appendChild(svg);
-        a.classList.add('inline-flex','items-center','gap-1');
-      }
-    });
-
-    // =========== DESKTOP: open/close ===========
-    desktopMenu.querySelectorAll("li.menu-item-has-children").forEach((li) => {
-      const trigger = li.querySelector(':scope > a');
-      const dd = li.querySelector(':scope > .sub-menu');
-      if (!trigger || !dd) return;
-
-      trigger.setAttribute('aria-haspopup', 'true');
-      trigger.setAttribute('aria-expanded', 'false');
-
-      function closeAll() {
-        desktopMenu.querySelectorAll(".sub-menu.open").forEach((other) => {
-          if (other !== dd) {
-            other.classList.remove('open');
-            const ob = other.previousElementSibling;
-            if (ob && ob.tagName === 'A') ob.setAttribute('aria-expanded', 'false');
-          }
-        });
-      }
-
-      trigger.addEventListener('click', (e) => {
-        e.preventDefault(); // اگر می‌خوای لینک باشد، فلش جدا بساز
-        const opening = !dd.classList.contains('open');
-        closeAll();
-        dd.classList.toggle('open', opening);       // این خط نمایش را کنترل می‌کند
-        trigger.setAttribute('aria-expanded', String(opening));
+    // =========== DESKTOP: submenu prepare (two-columns + caret) ===========
+    const desktopMenu = document.querySelector('.menu-desktop');
+    if (desktopMenu) {
+      // 1) والد‌ها relative
+      desktopMenu.querySelectorAll('li.menu-item-has-children').forEach(li => {
+        li.classList.add('relative');
       });
 
-      trigger.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          trigger.click();
-        }
-        if (e.key === 'Escape') {
-          dd.classList.remove('open');
-          trigger.setAttribute('aria-expanded', 'false');
-          trigger.focus();
-        }
-      });
-    });
-
-    // کلیک بیرون: بستن
-    document.addEventListener('click', (e) => {
-      if (!e.target.closest('.menu-desktop li.menu-item-has-children')) {
-        desktopMenu.querySelectorAll(".sub-menu.open").forEach((dd) => {
-          dd.classList.remove('open');
-          const t = dd.previousElementSibling;
-          if (t && t.tagName === 'A') t.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-    // ESC: بستن
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        desktopMenu.querySelectorAll(".sub-menu.open").forEach((dd) => {
-          dd.classList.remove('open');
-          const t = dd.previousElementSibling;
-          if (t && t.tagName === 'A') t.setAttribute('aria-expanded', 'false');
-        });
-      }
-    });
-
-    // در صورت تغییر اندازه: دوباره چکِ ستون‌ها
-    window.addEventListener('resize', ()=>{
-      desktopMenu.querySelectorAll('li.menu-item-has-children > .sub-menu').forEach((dd)=>{
+      // 2) دو ستونه در صورت >6 آیتم + استایل لینک‌های داخلی
+      desktopMenu.querySelectorAll('li.menu-item-has-children > .sub-menu').forEach((dd) => {
         const items = dd.querySelectorAll(':scope > li');
-        if (items.length > 6) dd.classList.add('two-cols'); else dd.classList.remove('two-cols');
+        if (items.length > 6) dd.classList.add('two-cols');
+        else dd.classList.remove('two-cols');
+
+        dd.querySelectorAll(':scope > li > a').forEach(a => {
+          a.classList.add('block', 'px-3', 'py-2', 'rounded-lg', 'hover:bg-slate-50', 'text-sm', 'text-slate-700');
+        });
       });
+
+      // 3) افزودن فلش به والد‌هایی که ندارند
+      desktopMenu.querySelectorAll('li.menu-item-has-children > a').forEach((a) => {
+        if (!a.querySelector('.caret')) {
+          const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+          svg.setAttribute("viewBox", "0 0 24 24");
+          svg.setAttribute("width", "14");
+          svg.setAttribute("height", "14");
+          svg.classList.add("caret");
+          svg.innerHTML = '<path d="M6 9l6 6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>';
+          a.appendChild(svg);
+          a.classList.add('inline-flex', 'items-center', 'gap-1');
+        }
+      });
+
+      // =========== DESKTOP: open/close ===========
+      desktopMenu.querySelectorAll("li.menu-item-has-children").forEach((li) => {
+        const trigger = li.querySelector(':scope > a');
+        const dd = li.querySelector(':scope > .sub-menu');
+        if (!trigger || !dd) return;
+
+        trigger.setAttribute('aria-haspopup', 'true');
+        trigger.setAttribute('aria-expanded', 'false');
+
+        function closeAll() {
+          desktopMenu.querySelectorAll(".sub-menu.open").forEach((other) => {
+            if (other !== dd) {
+              other.classList.remove('open');
+              const ob = other.previousElementSibling;
+              if (ob && ob.tagName === 'A') ob.setAttribute('aria-expanded', 'false');
+            }
+          });
+        }
+
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault(); // اگر می‌خوای لینک باشد، فلش جدا بساز
+          const opening = !dd.classList.contains('open');
+          closeAll();
+          dd.classList.toggle('open', opening); // این خط نمایش را کنترل می‌کند
+          trigger.setAttribute('aria-expanded', String(opening));
+        });
+
+        trigger.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            trigger.click();
+          }
+          if (e.key === 'Escape') {
+            dd.classList.remove('open');
+            trigger.setAttribute('aria-expanded', 'false');
+            trigger.focus();
+          }
+        });
+      });
+
+      // کلیک بیرون: بستن
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('.menu-desktop li.menu-item-has-children')) {
+          desktopMenu.querySelectorAll(".sub-menu.open").forEach((dd) => {
+            dd.classList.remove('open');
+            const t = dd.previousElementSibling;
+            if (t && t.tagName === 'A') t.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+      // ESC: بستن
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          desktopMenu.querySelectorAll(".sub-menu.open").forEach((dd) => {
+            dd.classList.remove('open');
+            const t = dd.previousElementSibling;
+            if (t && t.tagName === 'A') t.setAttribute('aria-expanded', 'false');
+          });
+        }
+      });
+
+      // در صورت تغییر اندازه: دوباره چکِ ستون‌ها
+      window.addEventListener('resize', () => {
+        desktopMenu.querySelectorAll('li.menu-item-has-children > .sub-menu').forEach((dd) => {
+          const items = dd.querySelectorAll(':scope > li');
+          if (items.length > 6) dd.classList.add('two-cols');
+          else dd.classList.remove('two-cols');
+        });
+      });
+    }
+  });
+</script>
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.getElementById("scrollTopBtn");
+    let isVisible = false;
+
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 200 && !isVisible) {
+        isVisible = true;
+        gsap.to(btn, { duration: 0.6, opacity: 1, y: 0, pointerEvents: "auto", ease: "power1.out" });
+      } else if (window.scrollY <= 200 && isVisible) {
+        isVisible = false;
+        gsap.to(btn, { duration: 0.6, opacity: 0, y: 50, pointerEvents: "none", ease: "power1.in" });
+      }
     });
-  }
-});
+
+    btn.addEventListener("click", () => {
+      gsap.to(window, { duration: 1.2, scrollTo: { y: 0 }, ease: "power2.inOut" });
+    });
+  });
 </script>
 
 </body>

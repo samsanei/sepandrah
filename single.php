@@ -110,7 +110,7 @@ if (has_post_thumbnail()) {
     <article class="md:col-span-2 space-y-8">
 
       <!-- محتوا -->
-      <div class="prose prose-slate max-w-none text-slate-700">
+      <div class="wp-content-wrapper prose prose-slate max-w-none text-slate-700">
         <?php the_content(); ?>
       </div>
 
