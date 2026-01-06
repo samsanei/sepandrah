@@ -63,7 +63,7 @@ if (has_post_thumbnail()) {
       <div class="hero-overlay" aria-hidden="true"></div>
     </div>
 
-    <div class="absolute inset-0 container max-w-7xl flex items-end pt-16">
+    <div class="absolute inset-0 container mx-auto max-w-7xl flex items-end px-5 pt-16">
       <div class="text-right pb-8">
         <!-- دسته‌بندی اصلی -->
         <?php if (!empty($cats)) : 
@@ -104,7 +104,7 @@ if (has_post_thumbnail()) {
 </section>
 
 <!-- ===== Main ===== -->
-<main class="container mx-auto max-w-7xl py-12">
+<main class="container mx-auto max-w-7xl px-5 py-12">
   <div class="grid gap-8 md:grid-cols-3">
     <!-- Article -->
     <article class="md:col-span-2 space-y-8">

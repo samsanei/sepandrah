@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import './custom.css';
+
 @theme {
-  --font-display: "ModamWeb", "sans-serif";
+  --font-modam: "ModamWeb", sans-serif;
 }

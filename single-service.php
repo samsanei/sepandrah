@@ -54,7 +54,7 @@ $svc_archive = get_post_type_archive_link('service');
         <div class="absolute inset-0 bg-linear-to-t from-slate-950/60 via-transparent to-transparent"></div>
         <?php echo $hero_img_html; ?>
 
-        <div class="absolute inset-0 container mx-auto max-w-7xl flex items-end pt-16 px-5 md:px-0">
+        <div class="absolute inset-0 container mx-auto max-w-7xl flex items-end pt-16 px-5">
             <div class="text-right pb-8">
                 <?php if ($hero_sub) : ?>
                     <p class="text-white/80 text-sm mb-2"><?php echo esc_html($hero_sub); ?></p>
@@ -106,7 +106,7 @@ $svc_archive = get_post_type_archive_link('service');
 </section>
 
 <!-- Main content -->
-<main class="container mx-auto max-w-7xl px-5 md:px-0 pb-12">
+<main class="container mx-auto max-w-7xl px-5 pb-12">
     <div class="grid gap-8 md:grid-cols-3">
         <!-- Main column -->
         <article class="md:col-span-2 space-y-8 leading-8">
@@ -182,23 +182,53 @@ $svc_archive = get_post_type_archive_link('service');
         </article>
 
         <!-- Sidebar (دست‌نخورده) -->
-        <aside class="md:col-span-1 space-y-6">
-            <div class="rounded-2xl p-5 bg-white shadow-sm">
-                <h4 class="font-semibold text-slate-900"><?php esc_html_e('درخواست سریع', 'bamdad-studio'); ?></h4>
-                <p class="mt-2 text-sm text-slate-600"><?php esc_html_e('اطلاعات پایه را وارد کنید تا کارشناسان ما تماس بگیرند.', 'bamdad-studio'); ?></p>
-                <form class="mt-4 space-y-3">
-                    <input class="w-full border rounded-lg px-3 py-2 text-sm" placeholder="<?php esc_attr_e('نام شرکت', 'bamdad-studio'); ?>" />
-                    <input class="w-full border rounded-lg px-3 py-2 text-sm" placeholder="<?php esc_attr_e('ایمیل', 'bamdad-studio'); ?>" />
-                    <input class="w-full border rounded-lg px-3 py-2 text-sm" placeholder="<?php esc_attr_e('مبدا - مقصد', 'bamdad-studio'); ?>" />
-                    <button class="w-full mt-2 px-4 py-2 rounded-lg bg-blue-600 text-white text-sm"><?php esc_html_e('ارسال درخواست', 'bamdad-studio'); ?></button>
-                </form>
+        <aside class="md:col-span-1 pt-12">
+            <div class="sticky top-24 space-y-6 ">
+                <div class="rounded-2xl p-5 bg-white shadow-sm">
+                    <h4 class="font-semibold text-slate-900"><?php esc_html_e('درخواست سریع', 'bamdad-studio'); ?></h4>
+                    <p class="mt-2 text-sm text-slate-600"><?php esc_html_e('اطلاعات پایه را وارد کنید تا کارشناسان ما تماس بگیرند.', 'bamdad-studio'); ?></p>
+                    <div class="mt-4 space-y-3">
+                        <?php echo do_shortcode('[gravityform id="1" title="false" ajax="true"]'); ?>
+                    </div>
+                </div>
+
+                <div class="rounded-2xl p-5 bg-white shadow-sm text-sm text-slate-700">
+                    <p class="font-semibold"><?php esc_html_e('تماس فوری', 'bamdad-studio'); ?></p>
+                    <div class="flex flex-col gap-3 w-full items-center lg:items-start mt-5">
+
+                        <!-- شماره ۱ -->
+                        <a href="tel:+989122895673" class="flex items-center gap-3 text-slate-900 hover:text-slate-700 transition-colors group">
+
+                            <span class="text-slate-900 group-hover:text-blue-400 transition-colors ">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm font-sans tracking-wider order-2 lg:order-1">۰۹۱۲۲۸۹۵۶۷۳</span>
+                        </a>
+                        <a href="tel:+982188703035" class="flex items-center gap-3 text-slate-900 hover:text-slate-700 transition-colors group">
+
+                            <span class="text-slate-900 group-hover:text-blue-400 transition-colors ">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm font-sans tracking-wider order-2 lg:order-1">۸۸۷۰۳۰۳۵</span>
+                        </a>
+                        <a href="tel:+982188703036" class="flex items-center gap-3 text-slate-900 hover:text-slate-700 transition-colors group">
+
+                            <span class="text-slate-900 group-hover:text-blue-400 transition-colors ">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"></path>
+                                </svg>
+                            </span>
+                            <span class="text-sm font-sans tracking-wider order-2 lg:order-1">۸۸۷۰۳۰۳۶</span>
+                        </a>
+
+                    </div>
+                </div>
             </div>
 
-            <div class="rounded-2xl p-5 bg-white shadow-sm text-sm text-slate-700">
-                <p class="font-semibold"><?php esc_html_e('تماس فوری', 'bamdad-studio'); ?></p>
-                <p class="mt-2 text-slate-600">021-0000-0000</p>
-                <a href="#contact" class="inline-block mt-3 text-blue-600"><?php esc_html_e('تماس مستقیم با کارشناس', 'bamdad-studio'); ?></a>
-            </div>
         </aside>
     </div>
 </main>

@@ -1,22 +1,22 @@
 <?php get_header(); ?>
 
 <!-- Page Hero Section -->
-<section class="relative w-full bg-gray-100 dark:bg-neutral-900 py-16 md:py-24">
+<section class="relative w-full bg-slate-900 pb-16 pt-32">
   <div class="container mx-auto px-4 text-center">
     
     <!-- Breadcrumb -->
-    <nav class="mb-4 text-sm text-gray-500 dark:text-gray-400">
+    <nav class="mb-4 text-sm text-slate-100">
       <a href="<?php echo home_url(); ?>" class="hover:text-primary-600 transition">
         خانه
       </a>
       <span class="mx-2 text-gray-400">/</span>
-      <span class="text-gray-600 dark:text-gray-300">
+      <span class="text-slate-300">
         <?php the_title(); ?>
       </span>
     </nav>
 
     <!-- Page Title -->
-    <h1 class="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
+    <h1 class="text-3xl md:text-5xl font-bold text-slate-100 leading-tight">
       <?php the_title(); ?>
     </h1>
   </div>

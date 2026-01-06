@@ -7,12 +7,12 @@ export default defineConfig({
     "./template-parts/**/*.php",
   ],
   safelist: [
-    'font-yekan', // 👈 اینجا!
+    'font-modam', // 👈 اینجا!
   ],
   theme: {
     extend: {
       fontFamily: {
-        yekan: [Yekan Bakh, 'sans-serif'],
+        modal: [ModamWeb, 'sans-serif'],
       },
     },
   },

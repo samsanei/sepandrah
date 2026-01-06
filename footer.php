@@ -4,127 +4,202 @@
 
 <!-- ================= Footer ================= -->
 
-<footer class="bg-slate-950 text-white/90">
-  <div class="relative w-full h-[500px] overflow-hidden
-            bg-[url('https://sepandrah.bamdad.studio/wp-content/themes/sepandrah/assets/images/bg_footer_4.jpg')]
-            bg-cover bg-center md:bg-fixed">
-    <!-- Overlay برای خوانایی -->
-    <div class="absolute inset-0 bg-linear-to-t from-slate-950 via-black/40 to-transparent"></div>
+<footer class="bg-[#0B1221] text-white overflow-hidden border-t border-white/5 relative">
+  
+  <!-- ========================================== -->
+  <!-- بخش ۱: CTA (بنر تصویری بالا) -->
+  <!-- نکته: اگر طبق تصویر فقط بخش تیره را می‌خواهید، می‌توانید این div را حذف کنید -->
+  <!-- ========================================== -->
+  <div class="relative w-full h-[400px] md:h-[500px] overflow-hidden group">
+    <!-- تصویر پس‌زمینه با افکت پارالاکس ملایم -->
+    <div class="absolute inset-0 bg-[url('https://sepandrah.bamdad.studio/wp-content/themes/sepandrah/assets/images/bg_footer_4.jpg')] bg-cover bg-center md:bg-fixed scale-100 group-hover:scale-105 transition-transform duration-700 ease-out"></div>
+    <!-- Overlay گرادینت برای اتصال نرم به فوتر تیره -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[#0B1221] via-[#0B1221]/80 to-transparent"></div>
 
-    <!-- محتوا -->
-    <div class="relative z-10 h-full">
-      <div class="container mx-auto max-w-7xl px-4 h-full">
-        <div class="h-full flex items-center justify-center text-center">
-          <div class="space-y-5 md:space-y-6">
-            <h3 class="text-white font-extrabold leading-tight text-3xl">
-             سپند راه آگرین همراه مطمئن شما در تجارت بین‌الملل
-            </h1>
-            <p class="text-white/90 text-xs md:text-base">
-             از تأمین تا حمل و ترخیص—تحویل به‌موقع، شفافیت کامل و کاهش ریسک در زنجیره تأمین شما.
-            </p>
-
-<div class="pt-4">
-  <a href="/contact" class="group inline-flex items-center gap-3 rounded-full bg-white text-slate-900 px-1 py-1 text-sm font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-[1px]">
-    <span class="ps-3">درخواست مشاوره</span>
-    <span class="w-8 h-8 rounded-full bg-blue-800 text-white flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-3">
-      <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25" />
-    </svg>
-
-    </span>
-  </a>
-</div>
-
-          </div>
-        </div>
-      </div>
+    <div class="relative z-10 h-full container mx-auto px-6 flex flex-col items-center justify-center text-center">
+      <h3 class="text-white font-extrabold text-2xl md:text-4xl leading-tight mb-4 drop-shadow-lg">
+        سپند راه آگرین؛ همراه مطمئن شما در تجارت بین‌الملل
+      </h3>
+      <p class="text-slate-300 text-sm md:text-md max-w-2xl mb-8 leading-relaxed">
+        از تأمین تا حمل و ترخیص—تحویل به‌موقع، شفافیت کامل و کاهش ریسک در زنجیره تأمین شما.
+      </p>
+      
+      <a href="https://www.sepandrah.com/%d8%aa%d9%85%d8%a7%d8%b3/" class="group inline-flex items-center gap-3 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white pl-2 pr-5 py-2 text-sm font-semibold transition-all duration-300 hover:bg-white hover:text-[#0B1221] hover:scale-105 shadow-[0_0_20px_rgba(255,255,255,0.1)]">
+        <span>درخواست مشاوره رایگان</span>
+        <span class="w-8 h-8 rounded-full bg-[#0B1221] text-white flex items-center justify-center transition-transform duration-300 group-hover:-rotate-45">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 19.5-15-15m0 0v11.25m0-11.25h11.25" />
+          </svg>
+        </span>
+      </a>
     </div>
   </div>
-  <!-- === Full-width Hero (بالای منو) === -->
-  <div class="container mx-auto max-w-7xl">
-    <!-- Middle: About + Links + Contact -->
-    <div class="grid gap-10 md:grid-cols-4 py-18 px-10 md:px-0">
-      <div class="col-span-2 md:col-span-1">
-        <div class="flex items-center gap-3 mb-10">
-          <div class="w-18 h-18 grid place-items-center text-white">
-            <!-- <span class="text-sm font-extrabold tracking-widest">SRA</span> -->
-            <img src="https://sepandrah.bamdad.studio/wp-content/themes/sepandrah/assets/images/logo_sepand_rah_white.svg" alt="سپند راه آگرین">
+
+  <!-- ========================================== -->
+  <!-- بخش ۲: بدنه اصلی فوتر (مشابه تصویر ارسالی) -->
+  <!-- ========================================== -->
+  <div class="container mx-auto max-w-7xl px-6 pt-16 pb-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+
+      <!-- ستون ۱: برند و توضیحات (سمت راست در RTL) -->
+      <!-- در دسکتاپ ۵ ستون از ۱۲ ستون را می‌گیرد -->
+      <div class="lg:col-span-5 flex flex-col items-center lg:items-start text-center lg:text-right space-y-6">
+        
+        <!-- لوگو و تیتر -->
+        <div class="flex flex-col lg:flex-row items-center gap-4">
+          <!-- لوگو -->
+          <div class="shrink-0">
+             <img class="w-20 h-20 brightness-200 contrast-125 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]" src="https://sepandrah.bamdad.studio/wp-content/themes/sepandrah/assets/images/logo_sepand_rah_white.svg" alt="سپند راه آگرین">
           </div>
-          <div class="flex flex-col text-xs text-white/80 gap-1">
-            <span class="text-base">سپند راه آگرین</span>
-            <span>SEPAND RAH AGRIN</span>
+          <!-- متن کنار لوگو -->
+          <div class="flex flex-col gap-1">
+            <h2 class="text-xl font-bold tracking-tight text-white">
+              حمل و نقل بین المللی سپند راه آگرین
+            </h2>
+            <span class="text-[10px] tracking-[0.1em] text-slate-400 uppercase font-sans">
+              SEPAND RAH AGRIN INT TRANSPORT CO
+            </span>
           </div>
         </div>
-        <p class="text-sm leading-7 text-white/80 text-justify">
-          ارائه‌دهنده‌ی راهکارهای مطمئن و کارآمد در حمل‌ونقل بین‌المللی. از
-          فورواردری تا ردیابی لحظه‌ای، کسب‌وکار شما را روان نگه می‌داریم.
+
+        <!-- توضیحات -->
+        <p class="text-slate-400 text-sm leading-7 text-justify lg:text-right max-w-md">
+          سپند راه آگرین؛ ارائه‌دهنده حمل‌ونقل بین‌المللی با بیش از ۲۳۰ کامیون چادری، نرخ‌های رقابتی کرکری و فورواردری، پوشش بیمه CMR و FBL، مطابق استانداردهای اروپا.
         </p>
-        <div class="flex gap-3 mt-5">
-          <a
-            class="w-auto h-9 grid place-items-center rounded-lg bg-white/10 hover:bg-white/15 transition"
-            href="#"
-            aria-label="Instagram">اینستاگرم
+      </div>
+
+      <!-- ستون ۲: اطلاعات تماس (وسط) -->
+      <!-- در دسکتاپ ۴ ستون را می‌گیرد -->
+      <div class="lg:col-span-4 flex flex-col items-center lg:items-end lg:pr-8 space-y-6">
+        
+        <!-- آدرس -->
+        <div class="flex items-start justify-center lg:justify-end gap-3 w-full text-center lg:text-right group">
+          <div class="mt-1 text-slate-500 group-hover:text-blue-400 transition-colors">
+            <!-- Icon: Map Pin -->
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z" />
+            </svg>
+          </div>
+          <p class="text-slate-300 text-sm leading-6 flex-1 order-2 lg:order-1">
+           تهران، محله عباس آباد،اندیشه، خ قائم مقام فراهانی، خ شهید علی میرزا حسنی،پاسارگاد، پ 15، طبقه 6، واحد ۱۱
+          </p>
+          
+        </div>
+
+        <!-- تلفن‌ها و ایمیل -->
+        <div class="flex flex-col gap-3 w-full items-center lg:items-start">
+          
+          <!-- شماره ۱ -->
+          <a href="tel:+989122895673" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group">
+            
+            <span class="text-slate-500 group-hover:text-blue-400 transition-colors ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+            </span>
+            <span class="text-sm font-sans tracking-wider order-2 lg:order-1">۰۹۱۲۲۸۹۵۶۷۳</span>
           </a>
+          <a href="tel:+982188703035" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group">
+            
+            <span class="text-slate-500 group-hover:text-blue-400 transition-colors ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+            </span>
+            <span class="text-sm font-sans tracking-wider order-2 lg:order-1">۸۸۷۰۳۰۳۵</span>
+          </a>
+          <a href="tel:+982188703036" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group">
+            
+            <span class="text-slate-500 group-hover:text-blue-400 transition-colors ">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z" />
+              </svg>
+            </span>
+            <span class="text-sm font-sans tracking-wider order-2 lg:order-1">۸۸۷۰۳۰۳۶</span>
+          </a>
+
+
+
+          <!-- ایمیل -->
+          <a href="mailto:info@sepandrah.com" class="flex items-center gap-3 text-slate-300 hover:text-white transition-colors group">
+            
+            <span class="text-slate-500 group-hover:text-blue-400 transition-colors ">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+            </span>
+            <span class="text-sm font-sans tracking-wide order-2 lg:order-1">info@sepandrah.com</span>
+          </a>
+
         </div>
       </div>
 
-      <div>
-        <p class="font-semibold mb-3">خدمات</p>
-        <ul class="space-y-2 text-sm text-white/80">
-          <li><a href="#" class="hover:text-white">فریت فورواردینگ</a></li>
-          <li>
-            <a href="#" class="hover:text-white">انبارداری و توزیع</a>
-          </li>
-          <li><a href="#" class="hover:text-white">ترخیص کالا</a></li>
-          <li><a href="#" class="hover:text-white">ردیابی لحظه‌ای</a></li>
-          <li>
-            <a href="#" class="hover:text-white">مدیریت زنجیره تامین</a>
-          </li>
-          <li><a href="#" class="hover:text-white">حمل چندوجهی</a></li>
-        </ul>
+      <!-- ستون ۳: دسترسی سریع و سوشال (سمت چپ در RTL) -->
+      <!-- در دسکتاپ ۳ ستون را می‌گیرد -->
+      <div class="lg:col-span-3 flex flex-col items-center lg:items-end space-y-6">
+        
+        <!-- منوی دسترسی سریع -->
+        <div class="text-center lg:text-right w-full">
+           <h4 class="text-white font-bold mb-4 flex items-center justify-center lg:justify-start gap-2">
+             <span>دسترسی سریع :</span>
+           </h4>
+           <ul class="flex flex-col gap-2 text-sm text-slate-400">
+             <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all inline-block">صفحه نخست</a></li>
+             <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all inline-block">خدمات</a></li>
+             <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all inline-block">پروژه ها</a></li>
+             <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all inline-block">دانشنامه</a></li>
+             <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all inline-block">درباره ما</a></li>
+             <li><a href="#" class="hover:text-white hover:translate-x-1 transition-all inline-block">تماس با ما</a></li>
+           </ul>
+        </div>
+
+        <!-- سوشال مدیا -->
+        <div class="text-center lg:text-right w-full pt-4">
+           <h4 class="text-white text-xs mb-4">
+           در شبکه های اجتماعی دنبال کنید :
+           </h4>
+           <div class="flex items-center justify-center lg:justify-start gap-4">
+
+             <!-- WhatsApp -->
+             <a href="https://wa.me/+989122895673" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-green-600 hover:-translate-y-1 transition-all duration-300">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+             </a>
+
+             <!-- Instagram -->
+             <a href="https://www.instagram.com/sepand_rah_agrin/" target="_blank" class="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center text-white hover:bg-white hover:text-pink-600 hover:-translate-y-1 transition-all duration-300">
+               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+             </a>
+
+           </div>
+        </div>
+
       </div>
 
-      <div>
-        <p class="font-semibold mb-3">شرکت</p>
-        <ul class="space-y-2 text-sm text-white/80">
-          <li><a href="#about" class="hover:text-white">درباره ما</a></li>
-          <li><a href="#team" class="hover:text-white">تیم</a></li>
-          <li><a href="#services" class="hover:text-white">خدمات</a></li>
-          <li>
-            <a href="#cases" class="hover:text-white">مطالعات موردی</a>
-          </li>
-          <li>
-            <a href="#quote" class="hover:text-white">استعلام قیمت</a>
-          </li>
-          <li><a href="#blog" class="hover:text-white">بلاگ</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <p class="font-semibold mb-3">تماس</p>
-        <ul class="space-y-2 text-sm text-white/80">
-          <li>تهران، خیابان مثال، پلاک ۷۸۹، طبقه ۵</li>
-          <li>کد پستی ۱۰۰۱۸</li>
-          <li>021-0000-0000</li>
-          <li>enquiries@spandrah.com</li>
-        </ul>
-      </div>
-    </div>
-
-    <hr class=" border-white/10" />
-
-    <!-- Bottom bar -->
-    <div
-      class="flex flex-col md:flex-row items-center justify-between gap-4 py-6 text-xs text-white/60">
-      <p>© 2025 Spand Rah Agrin. کلیه حقوق محفوظ است.</p>
-      <div class="flex items-center gap-6">
-        <a href="#" class="hover:text-white/80">حریم خصوصی</a>
-        <a href="#" class="hover:text-white/80">شرایط استفاده</a>
-        <a href="#" class="hover:text-white/80">تنظیمات کوکی</a>
-      </div>
     </div>
   </div>
+
+  <!-- ========================================== -->
+  <!-- بخش ۳: کپی‌رایت (پایین‌ترین بخش) -->
+  <!-- ========================================== -->
+  <div class="border-t border-white/10 bg-[#060a13]">
+    <div class="container mx-auto max-w-7xl px-6 py-6 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+      <div class="text-center md:text-right">
+        <p>تمام حقوق این وب‌سایت برای <a href="https://www.sepandrah.com/">شرکت سپند راه آگرین</a> است. برای استفاده از مطالب، داشتن «هدف غیرتجاری» و ذکر «منبع» کافیست.</p>
+      </div>
+      <div class="">
+        <a href="https://www.sepandrah.com/" target="_blank" class="hover:text-white transition-colors tracking-widest font-sans uppercase">
+         Sepand Rah Agrin
+        </a>
+      </div>
+
+      
+
+    </div>
+  </div>
+
 </footer>
+
 
 <!-- دکمه بازگشت به بالا -->
 <div id="scrollTopBtn"
@@ -139,13 +214,8 @@
   </span>
 </div>
 
-
+<?php wp_footer(  ); ?>
 <!-- =============== Scripts =============== -->
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollToPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-<script src="https://unpkg.com/lenis@1.3.13/dist/lenis.min.js"></script>
 <script>
   // Initialize Lenis
   const lenis = new Lenis({
@@ -298,70 +368,29 @@
     },
   });
 </script>
-
 <script>
-  const projSwiper = new Swiper(".projects-swiper", {
-    speed: 700,
-    spaceBetween: 24,
-    slidesPerView: 1.1, // موبایل
-    centeredSlides: false,
-    navigation: {
-      nextEl: ".proj-next",
-      prevEl: ".proj-prev"
+const serviceSwiper = new Swiper(".services-swiper", {
+  speed: 700,
+  spaceBetween: 24,
+  slidesPerView: 1.1,
+  navigation: {
+    nextEl: ".serv-next",
+    prevEl: ".serv-prev",
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1.6,
     },
-    breakpoints: {
-      640: {
-        slidesPerView: 1.6,
-        spaceBetween: 20
-      },
-      768: {
-        slidesPerView: 2,
-        spaceBetween: 22
-      },
-      1024: {
-        slidesPerView: 3,
-        spaceBetween: 24
-      }, // دسکتاپ: ۳ آیتم
+    768: {
+      slidesPerView: 2,
     },
-  });
+    1024: {
+      slidesPerView: 3,
+    },
+  },
+});
 </script>
 
-<script>
-  const servicesSwiper = new Swiper(".services-swiper", {
-    loop: true,
-    speed: 700,
-    spaceBetween: 24,
-    slidesPerView: 1.05, // موبایل: نزدیک به تمام عرض
-    centeredSlides: false,
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".service-next",
-      prevEl: ".service-prev"
-    },
-    // اگر AutoPlay خواستی: autoplay: { delay: 4500, disableOnInteraction: false },
-    breakpoints: {
-      640: {
-        slidesPerView: 1.5,
-        spaceBetween: 24
-      }, // موبایل بزرگ
-      768: {
-        slidesPerView: 2.5,
-        spaceBetween: 28
-      }, // تبلت
-      1024: {
-        slidesPerView: 3.5,
-        spaceBetween: 32
-      }, // دسکتاپ: حداقل ۳ کارت
-      1440: {
-        slidesPerView: 4.5,
-        spaceBetween: 36
-      }, // نمایش وسیع‌تر
-    },
-  });
-</script>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
@@ -618,17 +647,117 @@
     window.addEventListener("scroll", () => {
       if (window.scrollY > 200 && !isVisible) {
         isVisible = true;
-        gsap.to(btn, { duration: 0.6, opacity: 1, y: 0, pointerEvents: "auto", ease: "power1.out" });
+        gsap.to(btn, {
+          duration: 0.6,
+          opacity: 1,
+          y: 0,
+          pointerEvents: "auto",
+          ease: "power1.out"
+        });
       } else if (window.scrollY <= 200 && isVisible) {
         isVisible = false;
-        gsap.to(btn, { duration: 0.6, opacity: 0, y: 50, pointerEvents: "none", ease: "power1.in" });
+        gsap.to(btn, {
+          duration: 0.6,
+          opacity: 0,
+          y: 50,
+          pointerEvents: "none",
+          ease: "power1.in"
+        });
       }
     });
 
     btn.addEventListener("click", () => {
-      gsap.to(window, { duration: 1.2, scrollTo: { y: 0 }, ease: "power2.inOut" });
+      gsap.to(window, {
+        duration: 1.2,
+        scrollTo: {
+          y: 0
+        },
+        ease: "power2.inOut"
+      });
     });
   });
+</script>
+<script>
+  // assets/js/main.js
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.__sitePreloaderInitialized) return;
+  window.__sitePreloaderInitialized = true;
+
+  const preloader = document.getElementById("site-preloader");
+  if (!preloader) return;
+
+  if (typeof gsap === "undefined") {
+    preloader.style.display = "none";
+    return;
+  }
+
+  const logo = document.querySelector(".js-preloader-logo");
+  const text = document.querySelector(".js-preloader-text");
+
+  document.documentElement.classList.add("is-preloading");
+
+  const tl = gsap.timeline({
+    paused: true,
+    defaults: { ease: "power2.out" }
+  });
+
+  // حالت اولیه (هیچ delay حسی نداریم)
+  gsap.set(preloader, { yPercent: 0 });
+  gsap.set(logo, { autoAlpha: 1, y: 0 });
+  gsap.set(text, { autoAlpha: 1, y: 0 });
+
+  /* -------------------------
+     ورود: لوگو → بلافاصله متن
+  ------------------------- */
+
+  tl.from(logo, {
+    scale: 0.96,
+    duration: 0.2
+  });
+
+  tl.from(
+    text,
+    {
+      autoAlpha: 0,
+      y: 100,
+      duration: 0.7
+    },
+    "-=0.26" // خیلی سریع پشت سر لوگو
+  );
+
+  /* -------------------------
+     خروج سریع و نرم
+  ------------------------- */
+
+  tl.to(
+    preloader,
+    {
+      yPercent: -100,
+      duration: 0.6,
+      ease: "power3.inOut"
+    },
+    "-=0.08" // بدون مکث
+  );
+
+  tl.add(() => {
+    preloader.style.display = "none";
+    preloader.style.pointerEvents = "none";
+    document.documentElement.classList.remove("is-preloading");
+  });
+
+  window.addEventListener("load", () => {
+    tl.play();
+  });
+
+  window.addEventListener("pageshow", (event) => {
+    if (event.persisted) {
+      preloader.style.display = "none";
+      document.documentElement.classList.remove("is-preloading");
+    }
+  });
+});
+
+
 </script>
 
 </body>
